@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>6b0507cfd5cb4013a3197f4fcbc6346d</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="cell code" id="Jw2R3xOGVrIl">
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Zoe Oboler <span class="kw">and</span> Izzy Blair, <span class="st">&quot;Comparing Artwork Metadata&quot;</span>, link:</span></code></pre></div>
+</div>
+<div class="cell markdown" id="3rlqzkghU0iv">
+<p>Zoe Oboler and Izzy Blair, "Comparing Artwork Metadata", link:</p>
+</div>
+<div class="cell markdown" id="1Ht3VHjaVQmk">
+<p>Artwork Metadata is a collaborative effort between Izzy Blair and Zoe
+Oboler. We are using Google Colab, pandas, Python, and Matplotlib for
+visualization. Our dataset is a comprehensive spreadsheet of all the
+items currently in the collection of the Met Museum in New York City.
+This data provides information for more than 400,000 items in the
+collection, so you can imagine that it is a very large amount of data to
+go through (this is why we are not using Github because of their file
+size restrictions). Each row (representing one object) holds more than
+43 columns of data, some of which include the department of the museum,
+the nationality of the artist as well as time period, the type of
+object, the date the object was recorded/collected, and more. So far, we
+have compiled visualizations for the type of objects (or
+classification), the number of prints added per year, and the number of
+prints per culture, as well as the distribution of objects across
+different cultures.</p>
+</div>
+<div class="cell code" id="Hzc0O6rQxUnE">
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>shell</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>jupyter nbconvert <span class="op">--</span>to html <span class="op">/</span>PATH<span class="op">/</span>TO<span class="op">/</span>YOUR<span class="op">/</span>NOTEBOOKFILE.ipynb</span></code></pre></div>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
+id="gqGSZw6axnCB" data-outputId="337dde78-3c31-4da2-903c-c39a7c2e5743">
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>drive.mount(<span class="st">&#39;/content/drive&#39;</span>)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Mounted at /content/drive
+</code></pre>
+</div>
+</div>
+<div class="cell code" id="cw_sVWU3CdC-">
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:661}"
+id="oxu-5r9SEr1C" data-outputId="cbbdd7ac-37af-49de-9d56-56de84725240">
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;/content/drive/MyDrive/ArtMetaData/MetObjects.csv&quot;</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div>
+<div class="output stream stderr">
+<pre><code>&lt;ipython-input-4-a5a233a04e20&gt;:1: DtypeWarning: Columns (7,8,9,10,11,18,27,28,29,30,31,32,33,34,35,36,37,39) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(&quot;/content/drive/MyDrive/ArtMetaData/MetObjects.csv&quot;)
+</code></pre>
+</div>
+<div class="output execute_result" data-execution_count="4">
+
+  <div id="df-c2ee31cf-3d76-437e-9a1f-7e8750fef76d" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Object Number</th>
+      <th>Is Highlight</th>
+      <th>Is Public Domain</th>
+      <th>Object ID</th>
+      <th>Department</th>
+      <th>Object Name</th>
+      <th>Title</th>
+      <th>Culture</th>
+      <th>Period</th>
+      <th>Dynasty</th>
+      <th>...</th>
+      <th>Subregion</th>
+      <th>Locale</th>
+      <th>Locus</th>
+      <th>Excavation</th>
+      <th>River</th>
+      <th>Classification</th>
+      <th>Rights and Reproduction</th>
+      <th>Link Resource</th>
+      <th>Metadata Date</th>
+      <th>Repository</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1979.486.1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1</td>
+      <td>American Decorative Arts</td>
+      <td>Coin</td>
+      <td>One-dollar Liberty Head Coin</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Metal</td>
+      <td>NaN</td>
+      <td>http://www.metmuseum.org/art/collection/search/1</td>
+      <td>4/3/2017 8:00:08 AM</td>
+      <td>Metropolitan Museum of Art, New York, NY</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1980.264.5</td>
+      <td>False</td>
+      <td>False</td>
+      <td>2</td>
+      <td>American Decorative Arts</td>
+      <td>Coin</td>
+      <td>Ten-dollar Liberty Head Coin</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Metal</td>
+      <td>NaN</td>
+      <td>http://www.metmuseum.org/art/collection/search/2</td>
+      <td>4/3/2017 8:00:08 AM</td>
+      <td>Metropolitan Museum of Art, New York, NY</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>67.265.9</td>
+      <td>False</td>
+      <td>False</td>
+      <td>3</td>
+      <td>American Decorative Arts</td>
+      <td>Coin</td>
+      <td>Two-and-a-Half Dollar Coin</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Metal</td>
+      <td>NaN</td>
+      <td>http://www.metmuseum.org/art/collection/search/3</td>
+      <td>4/3/2017 8:00:08 AM</td>
+      <td>Metropolitan Museum of Art, New York, NY</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>67.265.10</td>
+      <td>False</td>
+      <td>False</td>
+      <td>4</td>
+      <td>American Decorative Arts</td>
+      <td>Coin</td>
+      <td>Two-and-a-Half Dollar Coin</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Metal</td>
+      <td>NaN</td>
+      <td>http://www.metmuseum.org/art/collection/search/4</td>
+      <td>4/3/2017 8:00:08 AM</td>
+      <td>Metropolitan Museum of Art, New York, NY</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>67.265.11</td>
+      <td>False</td>
+      <td>False</td>
+      <td>5</td>
+      <td>American Decorative Arts</td>
+      <td>Coin</td>
+      <td>Two-and-a-Half Dollar Coin</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Metal</td>
+      <td>NaN</td>
+      <td>http://www.metmuseum.org/art/collection/search/5</td>
+      <td>4/3/2017 8:00:08 AM</td>
+      <td>Metropolitan Museum of Art, New York, NY</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 43 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-c2ee31cf-3d76-437e-9a1f-7e8750fef76d')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-c2ee31cf-3d76-437e-9a1f-7e8750fef76d button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-c2ee31cf-3d76-437e-9a1f-7e8750fef76d');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-07c38693-f1e1-453c-a4c7-0ed18b996bc3">
+  <button class="colab-df-quickchart" onclick="quickchart('df-07c38693-f1e1-453c-a4c7-0ed18b996bc3')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-07c38693-f1e1-453c-a4c7-0ed18b996bc3 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+
+    </div>
+  </div>
+
+</div>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
+id="Oda9MQOZHNxO" data-outputId="73b25a2a-bc8e-4cad-a5bc-64e440b3962b">
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code></pre></div>
+<div class="output execute_result" data-execution_count="26">
+<pre><code>(448203, 43)</code></pre>
+</div>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
+id="SzYl0dFe1mkI" data-outputId="b475a00b-1d0f-407a-bccd-a46e15d8cf63">
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.columns.tolist())</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>[&#39;Object Number&#39;, &#39;Is Highlight&#39;, &#39;Is Public Domain&#39;, &#39;Object ID&#39;, &#39;Department&#39;, &#39;Object Name&#39;, &#39;Title&#39;, &#39;Culture&#39;, &#39;Period&#39;, &#39;Dynasty&#39;, &#39;Reign&#39;, &#39;Portfolio&#39;, &#39;Artist Role&#39;, &#39;Artist Prefix&#39;, &#39;Artist Display Name&#39;, &#39;Artist Display Bio&#39;, &#39;Artist Suffix&#39;, &#39;Artist Alpha Sort&#39;, &#39;Artist Nationality&#39;, &#39;Artist Begin Date&#39;, &#39;Artist End Date&#39;, &#39;Object Date&#39;, &#39;Object Begin Date&#39;, &#39;Object End Date&#39;, &#39;Medium&#39;, &#39;Dimensions&#39;, &#39;Credit Line&#39;, &#39;Geography Type&#39;, &#39;City&#39;, &#39;State&#39;, &#39;County&#39;, &#39;Country&#39;, &#39;Region&#39;, &#39;Subregion&#39;, &#39;Locale&#39;, &#39;Locus&#39;, &#39;Excavation&#39;, &#39;River&#39;, &#39;Classification&#39;, &#39;Rights and Reproduction&#39;, &#39;Link Resource&#39;, &#39;Metadata Date&#39;, &#39;Repository&#39;]
+</code></pre>
+</div>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
+id="nNCaVG6r1sfI" data-outputId="eaca4cdd-9cec-493a-87ab-1719cc3fad87">
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Object Begin Date&#39;</span>].value_counts()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="36">
+<pre><code> 1800    23579
+ 1700    16355
+ 1900    10583
+ 1600     7157
+ 1888     5936
+         ...  
+-2599        1
+ 1423        1
+-1599        1
+ 646         1
+ 1017        1
+Name: Object Begin Date, Length: 2074, dtype: int64</code></pre>
+</div>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
+id="RWjT8msqvC_x" data-outputId="cb8d7d1e-f7d2-4bd9-937d-3695c9e9825d">
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Classification&#39;</span>].value_counts()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="27">
+<pre><code>Prints                                       69260
+Prints|Ephemera                              30033
+Photographs                                  26821
+Drawings                                     25230
+Books                                        14685
+                                             ...  
+Prints|Drawings|Books                            1
+Books|Manuscripts|Ornament &amp; Architecture        1
+Ornament &amp; Architecture|Books                    1
+Albums|Books                                     1
+Paper-Documents|Prints                           1
+Name: Classification, Length: 1077, dtype: int64</code></pre>
+</div>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
+id="OnNXVbEO1Rjo" data-outputId="d7092ecb-ccfd-4c9d-ba19-99a2e413cdaf">
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Period&#39;</span>].value_counts()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="34">
+<pre><code>Edo period (1615–1868)                           8710
+New Kingdom                                      6594
+Middle Kingdom                                   4646
+New Kingdom, Ramesside                           3758
+Qing dynasty (1644–1911)                         3713
+                                                 ... 
+Late Archaic or Classical                           1
+Imperial, Late Flavian–Hadrianic                    1
+late Central or early Eastern Javanese period       1
+Early Imperial, Augustan, probably                  1
+Ramesside/Third Intermediate Period                 1
+Name: Period, Length: 1695, dtype: int64</code></pre>
+</div>
+</div>
+<div class="cell code" id="mFC1rGjX4Y2x">
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> df</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>two_year_rows <span class="op">=</span> df2[df2[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">&gt;</span> <span class="dv">9999</span>]</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the average of the two years</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>two_year_rows[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">=</span> (two_year_rows[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">//</span> <span class="dv">10000</span> <span class="op">+</span> two_year_rows[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">%</span> <span class="dv">10000</span>) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Update the original DataFrame with the modified values</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>df.update(two_year_rows)</span></code></pre></div>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:723}"
+id="4WE-0Lduvfpe" data-outputId="f7bab660-4767-4567-9112-cf1b83c31e27">
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="op">=</span> df[<span class="st">&#39;Classification&#39;</span>].value_counts()[df[<span class="st">&#39;Classification&#39;</span>].value_counts() <span class="op">&gt;</span> <span class="dv">2000</span>]</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the bar chart for the filtered counts</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>filtered_df.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Classification&#39;</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Count&#39;</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Distribution of Classification (Counts &gt; 5000)&#39;</span>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="output display_data">
+<p><img
+src="vertopal_3e63f3229d004fef962fbe0e8ab4f800/422b46b16343080ef4656b2d49c301f92f7b5282.png" /></p>
+</div>
+</div>
+<div class="cell markdown" id="21NKxAwQVbh5">
+<p>Distribution of Classification: There are far more types
+(classifications) of objects than shown here, but we chose to condense
+the objects displayed to those objects with more than 2000 pieces. We
+did this by filtering our dataframe into the value counts that are
+greater than 2000, and then used matplotlib to visualize the data into a
+bar graph.</p>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}"
+id="WsF7vNF3y4qC" data-outputId="9fd33ba2-cf6c-414b-929d-d5bffc7678c8">
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>print_df <span class="op">=</span> df2[df2[<span class="st">&#39;Classification&#39;</span>] <span class="op">==</span> <span class="st">&#39;Prints&#39;</span>]</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by &#39;Object Begin Date&#39; (year) and count the number of prints</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>prints_per_year <span class="op">=</span> print_df.groupby(<span class="st">&#39;Object Begin Date&#39;</span>).size()</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the line graph</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>prints_per_year.plot(kind<span class="op">=</span><span class="st">&#39;line&#39;</span>)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Year&#39;</span>)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Number of Prints&#39;</span>)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Number of Prints Added per Year&#39;</span>)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="output display_data">
+<p><img
+src="vertopal_3e63f3229d004fef962fbe0e8ab4f800/23e2fc2a0208dfa5c4141b116cc3f5965c653634.png" /></p>
+</div>
+</div>
+<div class="cell markdown" id="fSCkaCl3Vc9k">
+<p>Number of Prints Added per Year: We chose to focus on prints because
+that is the most abundant object in the collection with almost 70,000
+pieces, according to our statistics. We made this line plot by first
+creating a new dataframe with only objects of type “Print”, and then
+plotted “prints_per_year” which is a groupby of all Print pieces by
+begin date.</p>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:739}"
+id="QbpoczZq3uAN" data-outputId="8f5efb78-5de3-4a9e-ea3c-e510ddc152f1">
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>prints_per_culture <span class="op">=</span> print_df.groupby(<span class="st">&#39;Culture&#39;</span>).size()</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the line graph</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>prints_per_culture.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Culture&#39;</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Number of Prints&#39;</span>)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Number of Prints per Culture&#39;</span>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="output display_data">
+<p><img
+src="vertopal_3e63f3229d004fef962fbe0e8ab4f800/e7edb444694c8e5afa342aa2404970bafe5c9431.png" /></p>
+</div>
+</div>
+<div class="cell markdown" id="LiekbVWYVfOC">
+<p>Number of Prints per Culture: This is a plot of a groupby dataframe
+of the previous print_df (just a df of all Prints) but now it is grouped
+by Culture. This is then plotted into a bar graph.</p>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
+id="xPpJZTID9EMX" data-outputId="03a169f4-ca79-4272-df28-2f4a08c01ad5">
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Culture&#39;</span>].value_counts()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="10">
+<pre><code>American                       22167
+French                         18224
+Japan                          16374
+China                          13844
+Italian                         6580
+                               ...  
+German, Weimar                     1
+American Eskimo (Alaska)           1
+possibly German, Königsberg        1
+Russian (Petrograd)                1
+French, presumably Paris           1
+Name: Culture, Length: 7101, dtype: int64</code></pre>
+</div>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:650}"
+id="_0eiKySJ8q_9" data-outputId="3faf2032-5512-4ef0-86fb-e28457f4e128">
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>newfiltered_df <span class="op">=</span> df[<span class="st">&#39;Culture&#39;</span>].value_counts()[df[<span class="st">&#39;Culture&#39;</span>].value_counts() <span class="op">&gt;</span> <span class="dv">500</span>]</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the bar chart for the filtered counts</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>newfiltered_df.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Culture&#39;</span>)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Count&#39;</span>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Distribution of Cultures (Counts &gt; 500)&#39;</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="output display_data">
+<p><img
+src="vertopal_3e63f3229d004fef962fbe0e8ab4f800/70ce4cd89644439245e07cac4fd3b34f23fdaf41.png" /></p>
+</div>
+</div>
+<div class="cell markdown" id="iEtzyBZ-ViK5">
+<p>Distribution of Cultures: Similarly to the Distribution of
+Classification graph, we graphed the different cultures and how many
+objects are recorded to be in the collection from each culture. (We only
+had space to show those cultures with more than 500 objects at the
+museum). It is interesting to compare this metric, which has the most
+objects from America, to the Prints culture distribution, where American
+prints takes up a much smaller amount.</p>
+</div>
+<div class="cell markdown" id="Ql84gBXVVkic">
+<p>Collaboration Plan: We will be working together at least once or
+twice a week (we have met up four times and collaborated virtually more
+times) in order to decide what metrics we want to display as well as how
+to go about visualizing them. Our original plan was to have metadata
+from the Met Museum and compare it to metadata from the MOMA museum.
+However, the data is so large that we have only had the capacity to work
+on the Met Museum data thus far. There are plenty of ways to analyze the
+data with just one dataset, however, as so much information is provided
+about each object. Some questions we hope to answer are: How do objects
+from different cultures compare to each other in terms of collection
+date, creation date, and object type? How do different object types
+differ in terms of size of collection and place of origin? What time
+period contains the most objects/most diverse set of artists? This would
+be even more interesting if/when we incorporate the data from MOMA to
+see how the two museums differ.</p>
+</div>
+</body>
+</html>
