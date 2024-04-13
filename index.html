@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>6b0507cfd5cb4013a3197f4fcbc6346d</title>
+  <title>fc68bd04e95c485393e23f766f1a5665</title>
   <style>
     html {
       line-height: 1.5;
@@ -227,12 +227,23 @@
   <![endif]-->
 </head>
 <body>
-<div class="cell code" id="Jw2R3xOGVrIl">
+<div class="cell code" data-execution_count="1"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:105}"
+id="Jw2R3xOGVrIl" data-outputId="cb09a882-89b5-4af8-ef89-2281b861c124">
 <div class="sourceCode" id="cb1"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Zoe Oboler <span class="kw">and</span> Izzy Blair, <span class="st">&quot;Comparing Artwork Metadata&quot;</span>, link:</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Zoe Oboler <span class="kw">and</span> Izzy Blair, <span class="st">&quot;Comparing Artwork Metadata&quot;</span>, link: https:<span class="op">//</span>zoeo11.github.io<span class="op">/</span></span></code></pre></div>
+<div class="output error" data-ename="SyntaxError"
+data-evalue="invalid syntax (&lt;ipython-input-1-e9313e1360f1&gt;, line 1)">
+<pre><code>  File &quot;&lt;ipython-input-1-e9313e1360f1&gt;&quot;, line 1
+    Zoe Oboler and Izzy Blair, &quot;Comparing Artwork Metadata&quot;, link: https://zoeo11.github.io/
+        ^
+SyntaxError: invalid syntax
+
+</code></pre>
+</div>
 </div>
 <div class="cell markdown" id="3rlqzkghU0iv">
-<p>Zoe Oboler and Izzy Blair, "Comparing Artwork Metadata"</p>
+<p>Zoe Oboler and Izzy Blair, "Comparing Artwork Metadata", link:</p>
 </div>
 <div class="cell markdown" id="1Ht3VHjaVQmk">
 <p>Artwork Metadata is a collaborative effort between Izzy Blair and Zoe
@@ -251,34 +262,268 @@ classification), the number of prints added per year, and the number of
 prints per culture, as well as the distribution of objects across
 different cultures.</p>
 </div>
-<div class="cell code" id="Hzc0O6rQxUnE">
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>shell</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>jupyter nbconvert <span class="op">--</span>to html <span class="op">/</span>PATH<span class="op">/</span>TO<span class="op">/</span>YOUR<span class="op">/</span>NOTEBOOKFILE.ipynb</span></code></pre></div>
-</div>
 <div class="cell code"
-data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="gqGSZw6axnCB" data-outputId="337dde78-3c31-4da2-903c-c39a7c2e5743">
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}"
+id="Hzc0O6rQxUnE" data-outputId="b688227e-c1d0-4cc8-990a-5e2e3b427427">
 <div class="sourceCode" id="cb3"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>drive.mount(<span class="st">&#39;/content/drive&#39;</span>)</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>shell</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>jupyter nbconvert <span class="op">--</span>to html <span class="op">/</span>PATH<span class="op">/</span>TO<span class="op">/</span>YOUR<span class="op">/</span>NOTEBOOKFILE.ipynb</span></code></pre></div>
 <div class="output stream stdout">
-<pre><code>Mounted at /content/drive
+<pre><code>[NbConvertApp] WARNING | pattern &#39;/PATH/TO/YOUR/NOTEBOOKFILE.ipynb&#39; matched no files
+This application is used to convert notebook files (*.ipynb)
+        to various other formats.
+
+        WARNING: THE COMMANDLINE INTERFACE MAY CHANGE IN FUTURE RELEASES.
+
+Options
+=======
+The options below are convenience aliases to configurable class-options,
+as listed in the &quot;Equivalent to&quot; description-line of the aliases.
+To see all configurable class-options for some &lt;cmd&gt;, use:
+    &lt;cmd&gt; --help-all
+
+--debug
+    set log level to logging.DEBUG (maximize logging output)
+    Equivalent to: [--Application.log_level=10]
+--show-config
+    Show the application&#39;s configuration (human-readable format)
+    Equivalent to: [--Application.show_config=True]
+--show-config-json
+    Show the application&#39;s configuration (json format)
+    Equivalent to: [--Application.show_config_json=True]
+--generate-config
+    generate default config file
+    Equivalent to: [--JupyterApp.generate_config=True]
+-y
+    Answer yes to any questions instead of prompting.
+    Equivalent to: [--JupyterApp.answer_yes=True]
+--execute
+    Execute the notebook prior to export.
+    Equivalent to: [--ExecutePreprocessor.enabled=True]
+--allow-errors
+    Continue notebook execution even if one of the cells throws an error and include the error message in the cell output (the default behaviour is to abort conversion). This flag is only relevant if &#39;--execute&#39; was specified, too.
+    Equivalent to: [--ExecutePreprocessor.allow_errors=True]
+--stdin
+    read a single notebook file from stdin. Write the resulting notebook with default basename &#39;notebook.*&#39;
+    Equivalent to: [--NbConvertApp.from_stdin=True]
+--stdout
+    Write notebook output to stdout instead of files.
+    Equivalent to: [--NbConvertApp.writer_class=StdoutWriter]
+--inplace
+    Run nbconvert in place, overwriting the existing notebook (only
+            relevant when converting to notebook format)
+    Equivalent to: [--NbConvertApp.use_output_suffix=False --NbConvertApp.export_format=notebook --FilesWriter.build_directory=]
+--clear-output
+    Clear output of current file and save in place,
+            overwriting the existing notebook.
+    Equivalent to: [--NbConvertApp.use_output_suffix=False --NbConvertApp.export_format=notebook --FilesWriter.build_directory= --ClearOutputPreprocessor.enabled=True]
+--no-prompt
+    Exclude input and output prompts from converted document.
+    Equivalent to: [--TemplateExporter.exclude_input_prompt=True --TemplateExporter.exclude_output_prompt=True]
+--no-input
+    Exclude input cells and output prompts from converted document.
+            This mode is ideal for generating code-free reports.
+    Equivalent to: [--TemplateExporter.exclude_output_prompt=True --TemplateExporter.exclude_input=True --TemplateExporter.exclude_input_prompt=True]
+--allow-chromium-download
+    Whether to allow downloading chromium if no suitable version is found on the system.
+    Equivalent to: [--WebPDFExporter.allow_chromium_download=True]
+--disable-chromium-sandbox
+    Disable chromium security sandbox when converting to PDF..
+    Equivalent to: [--WebPDFExporter.disable_sandbox=True]
+--show-input
+    Shows code input. This flag is only useful for dejavu users.
+    Equivalent to: [--TemplateExporter.exclude_input=False]
+--embed-images
+    Embed the images as base64 dataurls in the output. This flag is only useful for the HTML/WebPDF/Slides exports.
+    Equivalent to: [--HTMLExporter.embed_images=True]
+--sanitize-html
+    Whether the HTML in Markdown cells and cell outputs should be sanitized..
+    Equivalent to: [--HTMLExporter.sanitize_html=True]
+--log-level=&lt;Enum&gt;
+    Set the log level by value or name.
+    Choices: any of [0, 10, 20, 30, 40, 50, &#39;DEBUG&#39;, &#39;INFO&#39;, &#39;WARN&#39;, &#39;ERROR&#39;, &#39;CRITICAL&#39;]
+    Default: 30
+    Equivalent to: [--Application.log_level]
+--config=&lt;Unicode&gt;
+    Full path of a config file.
+    Default: &#39;&#39;
+    Equivalent to: [--JupyterApp.config_file]
+--to=&lt;Unicode&gt;
+    The export format to be used, either one of the built-in formats
+            [&#39;asciidoc&#39;, &#39;custom&#39;, &#39;html&#39;, &#39;latex&#39;, &#39;markdown&#39;, &#39;notebook&#39;, &#39;pdf&#39;, &#39;python&#39;, &#39;rst&#39;, &#39;script&#39;, &#39;slides&#39;, &#39;webpdf&#39;]
+            or a dotted object name that represents the import path for an
+            ``Exporter`` class
+    Default: &#39;&#39;
+    Equivalent to: [--NbConvertApp.export_format]
+--template=&lt;Unicode&gt;
+    Name of the template to use
+    Default: &#39;&#39;
+    Equivalent to: [--TemplateExporter.template_name]
+--template-file=&lt;Unicode&gt;
+    Name of the template file to use
+    Default: None
+    Equivalent to: [--TemplateExporter.template_file]
+--theme=&lt;Unicode&gt;
+    Template specific theme(e.g. the name of a JupyterLab CSS theme distributed
+    as prebuilt extension for the lab template)
+    Default: &#39;light&#39;
+    Equivalent to: [--HTMLExporter.theme]
+--sanitize_html=&lt;Bool&gt;
+    Whether the HTML in Markdown cells and cell outputs should be sanitized.This
+    should be set to True by nbviewer or similar tools.
+    Default: False
+    Equivalent to: [--HTMLExporter.sanitize_html]
+--writer=&lt;DottedObjectName&gt;
+    Writer class used to write the
+                                        results of the conversion
+    Default: &#39;FilesWriter&#39;
+    Equivalent to: [--NbConvertApp.writer_class]
+--post=&lt;DottedOrNone&gt;
+    PostProcessor class used to write the
+                                        results of the conversion
+    Default: &#39;&#39;
+    Equivalent to: [--NbConvertApp.postprocessor_class]
+--output=&lt;Unicode&gt;
+    overwrite base name use for output files.
+                can only be used when converting one notebook at a time.
+    Default: &#39;&#39;
+    Equivalent to: [--NbConvertApp.output_base]
+--output-dir=&lt;Unicode&gt;
+    Directory to write output(s) to. Defaults
+                                  to output to the directory of each notebook. To recover
+                                  previous default behaviour (outputting to the current
+                                  working directory) use . as the flag value.
+    Default: &#39;&#39;
+    Equivalent to: [--FilesWriter.build_directory]
+--reveal-prefix=&lt;Unicode&gt;
+    The URL prefix for reveal.js (version 3.x).
+            This defaults to the reveal CDN, but can be any url pointing to a copy
+            of reveal.js.
+            For speaker notes to work, this must be a relative path to a local
+            copy of reveal.js: e.g., &quot;reveal.js&quot;.
+            If a relative path is given, it must be a subdirectory of the
+            current directory (from which the server is run).
+            See the usage documentation
+            (https://nbconvert.readthedocs.io/en/latest/usage.html#reveal-js-html-slideshow)
+            for more details.
+    Default: &#39;&#39;
+    Equivalent to: [--SlidesExporter.reveal_url_prefix]
+--nbformat=&lt;Enum&gt;
+    The nbformat version to write.
+            Use this to downgrade notebooks.
+    Choices: any of [1, 2, 3, 4]
+    Default: 4
+    Equivalent to: [--NotebookExporter.nbformat_version]
+
+Examples
+--------
+
+    The simplest way to use nbconvert is
+
+            &gt; jupyter nbconvert mynotebook.ipynb --to html
+
+            Options include [&#39;asciidoc&#39;, &#39;custom&#39;, &#39;html&#39;, &#39;latex&#39;, &#39;markdown&#39;, &#39;notebook&#39;, &#39;pdf&#39;, &#39;python&#39;, &#39;rst&#39;, &#39;script&#39;, &#39;slides&#39;, &#39;webpdf&#39;].
+
+            &gt; jupyter nbconvert --to latex mynotebook.ipynb
+
+            Both HTML and LaTeX support multiple output templates. LaTeX includes
+            &#39;base&#39;, &#39;article&#39; and &#39;report&#39;.  HTML includes &#39;basic&#39;, &#39;lab&#39; and
+            &#39;classic&#39;. You can specify the flavor of the format used.
+
+            &gt; jupyter nbconvert --to html --template lab mynotebook.ipynb
+
+            You can also pipe the output to stdout, rather than a file
+
+            &gt; jupyter nbconvert mynotebook.ipynb --stdout
+
+            PDF is generated via latex
+
+            &gt; jupyter nbconvert mynotebook.ipynb --to pdf
+
+            You can get (and serve) a Reveal.js-powered slideshow
+
+            &gt; jupyter nbconvert myslides.ipynb --to slides --post serve
+
+            Multiple notebooks can be given at the command line in a couple of
+            different ways:
+
+            &gt; jupyter nbconvert notebook*.ipynb
+            &gt; jupyter nbconvert notebook1.ipynb notebook2.ipynb
+
+            or you can specify the notebooks list in a config file, containing::
+
+                c.NbConvertApp.notebooks = [&quot;my_notebook.ipynb&quot;]
+
+            &gt; jupyter nbconvert --config mycfg.py
+
+To see all available configurables, use `--help-all`.
+
+</code></pre>
+</div>
+<div class="output error" data-ename="CalledProcessError"
+data-evalue="Command &#39;jupyter nbconvert --to html /PATH/TO/YOUR/NOTEBOOKFILE.ipynb
+&#39; returned non-zero exit status 255.">
+<pre><code>---------------------------------------------------------------------------
+CalledProcessError                        Traceback (most recent call last)
+&lt;ipython-input-6-d80799e6cbdb&gt; in &lt;cell line: 1&gt;()
+----&gt; 1 get_ipython().run_cell_magic(&#39;shell&#39;, &#39;&#39;, &#39;jupyter nbconvert --to html /PATH/TO/YOUR/NOTEBOOKFILE.ipynb\n&#39;)
+
+/usr/local/lib/python3.10/dist-packages/google/colab/_shell.py in run_cell_magic(self, magic_name, line, cell)
+    332     if line and not cell:
+    333       cell = &#39; &#39;
+--&gt; 334     return super().run_cell_magic(magic_name, line, cell)
+    335 
+    336 
+
+/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py in run_cell_magic(self, magic_name, line, cell)
+   2471             with self.builtin_trap:
+   2472                 args = (magic_arg_s, cell)
+-&gt; 2473                 result = fn(*args, **kwargs)
+   2474             return result
+   2475 
+
+/usr/local/lib/python3.10/dist-packages/google/colab/_system_commands.py in _shell_cell_magic(args, cmd)
+    110   result = _run_command(cmd, clear_streamed_output=False)
+    111   if not parsed_args.ignore_errors:
+--&gt; 112     result.check_returncode()
+    113   return result
+    114 
+
+/usr/local/lib/python3.10/dist-packages/google/colab/_system_commands.py in check_returncode(self)
+    135   def check_returncode(self):
+    136     if self.returncode:
+--&gt; 137       raise subprocess.CalledProcessError(
+    138           returncode=self.returncode, cmd=self.args, output=self.output
+    139       )
+
+CalledProcessError: Command &#39;jupyter nbconvert --to html /PATH/TO/YOUR/NOTEBOOKFILE.ipynb
+&#39; returned non-zero exit status 255.
 </code></pre>
 </div>
 </div>
-<div class="cell code" id="cw_sVWU3CdC-">
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div>
-</div>
-<div class="cell code"
-data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:661}"
-id="oxu-5r9SEr1C" data-outputId="cbbdd7ac-37af-49de-9d56-56de84725240">
+<div class="cell code" data-execution_count="2"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
+id="gqGSZw6axnCB" data-outputId="662ca39e-ca3e-4322-831d-eddf227c9c14">
 <div class="sourceCode" id="cb6"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;/content/drive/MyDrive/ArtMetaData/MetObjects.csv&quot;</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>drive.mount(<span class="st">&#39;/content/drive&#39;</span>)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(&quot;/content/drive&quot;, force_remount=True).
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="3" id="cw_sVWU3CdC-">
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="4"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:661}"
+id="oxu-5r9SEr1C" data-outputId="6f1898fe-b50d-4614-9cb7-4f96f7762eca">
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;/content/drive/MyDrive/ArtMetaData/MetObjects.csv&quot;</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div>
 <div class="output stream stderr">
 <pre><code>&lt;ipython-input-4-a5a233a04e20&gt;:1: DtypeWarning: Columns (7,8,9,10,11,18,27,28,29,30,31,32,33,34,35,36,37,39) have mixed types. Specify dtype option on import or set low_memory=False.
   df = pd.read_csv(&quot;/content/drive/MyDrive/ArtMetaData/MetObjects.csv&quot;)
@@ -286,7 +531,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a hr
 </div>
 <div class="output execute_result" data-execution_count="4">
 
-  <div id="df-c2ee31cf-3d76-437e-9a1f-7e8750fef76d" class="colab-df-container">
+  <div id="df-b46ac2f0-e8b2-4395-85a2-663ccd35da32" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -456,7 +701,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a hr
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-c2ee31cf-3d76-437e-9a1f-7e8750fef76d')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-b46ac2f0-e8b2-4395-85a2-663ccd35da32')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -508,12 +753,12 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a hr
 
     <script>
       const buttonEl =
-        document.querySelector('#df-c2ee31cf-3d76-437e-9a1f-7e8750fef76d button.colab-df-convert');
+        document.querySelector('#df-b46ac2f0-e8b2-4395-85a2-663ccd35da32 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-c2ee31cf-3d76-437e-9a1f-7e8750fef76d');
+        const element = document.querySelector('#df-b46ac2f0-e8b2-4395-85a2-663ccd35da32');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -533,8 +778,8 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a hr
   </div>
 
 
-<div id="df-07c38693-f1e1-453c-a4c7-0ed18b996bc3">
-  <button class="colab-df-quickchart" onclick="quickchart('df-07c38693-f1e1-453c-a4c7-0ed18b996bc3')"
+<div id="df-c1296d51-14db-4aef-acc2-144b87946afc">
+  <button class="colab-df-quickchart" onclick="quickchart('df-c1296d51-14db-4aef-acc2-144b87946afc')"
             title="Suggest charts"
             style="display:none;">
 
@@ -653,7 +898,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a hr
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-07c38693-f1e1-453c-a4c7-0ed18b996bc3 button');
+        document.querySelector('#df-c1296d51-14db-4aef-acc2-144b87946afc button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -665,32 +910,33 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a hr
 
 </div>
 </div>
-<div class="cell code"
+<div class="cell code" data-execution_count="5"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="Oda9MQOZHNxO" data-outputId="73b25a2a-bc8e-4cad-a5bc-64e440b3962b">
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code></pre></div>
-<div class="output execute_result" data-execution_count="26">
+id="Oda9MQOZHNxO" data-outputId="0c9d3814-a79d-423d-9da3-d56053d4efe8">
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code></pre></div>
+<div class="output execute_result" data-execution_count="5">
 <pre><code>(448203, 43)</code></pre>
 </div>
 </div>
-<div class="cell code"
+<div class="cell code" data-execution_count="6"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="SzYl0dFe1mkI" data-outputId="b475a00b-1d0f-407a-bccd-a46e15d8cf63">
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.columns.tolist())</span></code></pre></div>
+id="SzYl0dFe1mkI" data-outputId="765f9853-1ffc-407f-99f9-63cd5945ec53">
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.columns.tolist())</span></code></pre></div>
 <div class="output stream stdout">
 <pre><code>[&#39;Object Number&#39;, &#39;Is Highlight&#39;, &#39;Is Public Domain&#39;, &#39;Object ID&#39;, &#39;Department&#39;, &#39;Object Name&#39;, &#39;Title&#39;, &#39;Culture&#39;, &#39;Period&#39;, &#39;Dynasty&#39;, &#39;Reign&#39;, &#39;Portfolio&#39;, &#39;Artist Role&#39;, &#39;Artist Prefix&#39;, &#39;Artist Display Name&#39;, &#39;Artist Display Bio&#39;, &#39;Artist Suffix&#39;, &#39;Artist Alpha Sort&#39;, &#39;Artist Nationality&#39;, &#39;Artist Begin Date&#39;, &#39;Artist End Date&#39;, &#39;Object Date&#39;, &#39;Object Begin Date&#39;, &#39;Object End Date&#39;, &#39;Medium&#39;, &#39;Dimensions&#39;, &#39;Credit Line&#39;, &#39;Geography Type&#39;, &#39;City&#39;, &#39;State&#39;, &#39;County&#39;, &#39;Country&#39;, &#39;Region&#39;, &#39;Subregion&#39;, &#39;Locale&#39;, &#39;Locus&#39;, &#39;Excavation&#39;, &#39;River&#39;, &#39;Classification&#39;, &#39;Rights and Reproduction&#39;, &#39;Link Resource&#39;, &#39;Metadata Date&#39;, &#39;Repository&#39;]
 </code></pre>
 </div>
 </div>
-<div class="cell code"
+<div class="cell code" data-execution_count="7"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="nNCaVG6r1sfI" data-outputId="eaca4cdd-9cec-493a-87ab-1719cc3fad87">
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Object Begin Date&#39;</span>].value_counts()</span></code></pre></div>
-<div class="output execute_result" data-execution_count="36">
-<pre><code> 1800    23579
+id="nNCaVG6r1sfI" data-outputId="f9cd0a8f-bc5a-4faf-93d1-013eb916f129">
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Object Begin Date&#39;</span>].value_counts()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="7">
+<pre><code>Object Begin Date
+ 1800    23579
  1700    16355
  1900    10583
  1600     7157
@@ -701,16 +947,17 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a h
 -1599        1
  646         1
  1017        1
-Name: Object Begin Date, Length: 2074, dtype: int64</code></pre>
+Name: count, Length: 2074, dtype: int64</code></pre>
 </div>
 </div>
-<div class="cell code"
+<div class="cell code" data-execution_count="8"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="RWjT8msqvC_x" data-outputId="cb8d7d1e-f7d2-4bd9-937d-3695c9e9825d">
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Classification&#39;</span>].value_counts()</span></code></pre></div>
-<div class="output execute_result" data-execution_count="27">
-<pre><code>Prints                                       69260
+id="RWjT8msqvC_x" data-outputId="3ac1c823-2718-4d35-c31e-aed9c53340e6">
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Classification&#39;</span>].value_counts()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="8">
+<pre><code>Classification
+Prints                                       69260
 Prints|Ephemera                              30033
 Photographs                                  26821
 Drawings                                     25230
@@ -721,16 +968,17 @@ Books|Manuscripts|Ornament &amp; Architecture        1
 Ornament &amp; Architecture|Books                    1
 Albums|Books                                     1
 Paper-Documents|Prints                           1
-Name: Classification, Length: 1077, dtype: int64</code></pre>
+Name: count, Length: 1077, dtype: int64</code></pre>
 </div>
 </div>
-<div class="cell code"
+<div class="cell code" data-execution_count="9"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="OnNXVbEO1Rjo" data-outputId="d7092ecb-ccfd-4c9d-ba19-99a2e413cdaf">
-<div class="sourceCode" id="cb16"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Period&#39;</span>].value_counts()</span></code></pre></div>
-<div class="output execute_result" data-execution_count="34">
-<pre><code>Edo period (1615–1868)                           8710
+id="OnNXVbEO1Rjo" data-outputId="8a55dffe-d790-4555-a3ee-1532871788fe">
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Period&#39;</span>].value_counts()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="9">
+<pre><code>Period
+Edo period (1615–1868)                           8710
 New Kingdom                                      6594
 Middle Kingdom                                   4646
 New Kingdom, Ramesside                           3758
@@ -741,35 +989,46 @@ Imperial, Late Flavian–Hadrianic                    1
 late Central or early Eastern Javanese period       1
 Early Imperial, Augustan, probably                  1
 Ramesside/Third Intermediate Period                 1
-Name: Period, Length: 1695, dtype: int64</code></pre>
+Name: count, Length: 1695, dtype: int64</code></pre>
 </div>
 </div>
-<div class="cell code" id="mFC1rGjX4Y2x">
-<div class="sourceCode" id="cb18"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> df</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>two_year_rows <span class="op">=</span> df2[df2[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">&gt;</span> <span class="dv">9999</span>]</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the average of the two years</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>two_year_rows[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">=</span> (two_year_rows[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">//</span> <span class="dv">10000</span> <span class="op">+</span> two_year_rows[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">%</span> <span class="dv">10000</span>) <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Update the original DataFrame with the modified values</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>df.update(two_year_rows)</span></code></pre></div>
+<div class="cell code" data-execution_count="8"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
+id="mFC1rGjX4Y2x" data-outputId="205d5936-3440-419d-f3d7-e807b2edee73">
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> df</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>two_year_rows <span class="op">=</span> df2[df2[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">&gt;</span> <span class="dv">9999</span>]</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the average of the two years</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>two_year_rows[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">=</span> (two_year_rows[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">//</span> <span class="dv">10000</span> <span class="op">+</span> two_year_rows[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">%</span> <span class="dv">10000</span>) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Update the original DataFrame with the modified values</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>df.update(two_year_rows)</span></code></pre></div>
+<div class="output stream stderr">
+<pre><code>&lt;ipython-input-8-980bb0026b24&gt;:5: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  two_year_rows[&#39;Object Begin Date&#39;] = (two_year_rows[&#39;Object Begin Date&#39;] // 10000 + two_year_rows[&#39;Object Begin Date&#39;] % 10000) / 2
+</code></pre>
 </div>
-<div class="cell code"
+</div>
+<div class="cell code" data-execution_count="11"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:723}"
-id="4WE-0Lduvfpe" data-outputId="f7bab660-4767-4567-9112-cf1b83c31e27">
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="op">=</span> df[<span class="st">&#39;Classification&#39;</span>].value_counts()[df[<span class="st">&#39;Classification&#39;</span>].value_counts() <span class="op">&gt;</span> <span class="dv">2000</span>]</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the bar chart for the filtered counts</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>filtered_df.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Classification&#39;</span>)</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Count&#39;</span>)</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Distribution of Classification (Counts &gt; 5000)&#39;</span>)</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+id="4WE-0Lduvfpe" data-outputId="0db8027e-1200-429e-ae18-a0204d3e2ccb">
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="op">=</span> df[<span class="st">&#39;Classification&#39;</span>].value_counts()[df[<span class="st">&#39;Classification&#39;</span>].value_counts() <span class="op">&gt;</span> <span class="dv">2000</span>]</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the bar chart for the filtered counts</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>filtered_df.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Classification&#39;</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Count&#39;</span>)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Distribution of Classification (Counts &gt; 5000)&#39;</span>)</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="output display_data">
 <p><img
-src="Imgs/422b46b16343080ef4656b2d49c301f92f7b5282.png" /></p>
+src="vertopal_2d7e2fdb315f452c88101af61eb02bbe/422b46b16343080ef4656b2d49c301f92f7b5282.png" /></p>
 </div>
 </div>
 <div class="cell markdown" id="21NKxAwQVbh5">
@@ -780,65 +1039,48 @@ did this by filtering our dataframe into the value counts that are
 greater than 2000, and then used matplotlib to visualize the data into a
 bar graph.</p>
 </div>
-<div class="cell code"
+<div class="cell code" data-execution_count="10"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}"
-id="WsF7vNF3y4qC" data-outputId="9fd33ba2-cf6c-414b-929d-d5bffc7678c8">
-<div class="sourceCode" id="cb20"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>print_df <span class="op">=</span> df2[df2[<span class="st">&#39;Classification&#39;</span>] <span class="op">==</span> <span class="st">&#39;Prints&#39;</span>]</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by &#39;Object Begin Date&#39; (year) and count the number of prints</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>prints_per_year <span class="op">=</span> print_df.groupby(<span class="st">&#39;Object Begin Date&#39;</span>).size()</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the line graph</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>prints_per_year.plot(kind<span class="op">=</span><span class="st">&#39;line&#39;</span>)</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Year&#39;</span>)</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Number of Prints&#39;</span>)</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Number of Prints Added per Year&#39;</span>)</span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+id="WsF7vNF3y4qC" data-outputId="9f68206c-9357-4d9b-d36a-44f35b8e0ed6">
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by &#39;Object Begin Date&#39; (year) and count the number of prints</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> df2.loc[df[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">&gt;=</span> <span class="dv">0</span>]</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>obj_per_year <span class="op">=</span> df3.groupby(<span class="st">&#39;Object Begin Date&#39;</span>).size()</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the line graph</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>obj_per_year.plot(kind<span class="op">=</span><span class="st">&#39;line&#39;</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Year&#39;</span>)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Number of Objects&#39;</span>)</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Number of Objects Added per Year&#39;</span>)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="output display_data">
 <p><img
-src="Imgs/23e2fc2a0208dfa5c4141b116cc3f5965c653634.png" /></p>
+src="vertopal_2d7e2fdb315f452c88101af61eb02bbe/405040c289c12a6727c1704638aef50361466b98.png" /></p>
 </div>
 </div>
 <div class="cell markdown" id="fSCkaCl3Vc9k">
-<p>Number of Prints Added per Year: We chose to focus on prints because
-that is the most abundant object in the collection with almost 70,000
-pieces, according to our statistics. We made this line plot by first
-creating a new dataframe with only objects of type “Print”, and then
-plotted “prints_per_year” which is a groupby of all Print pieces by
-begin date.</p>
-</div>
-<div class="cell code"
-data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:739}"
-id="QbpoczZq3uAN" data-outputId="8f5efb78-5de3-4a9e-ea3c-e510ddc152f1">
-<div class="sourceCode" id="cb21"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>prints_per_culture <span class="op">=</span> print_df.groupby(<span class="st">&#39;Culture&#39;</span>).size()</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the line graph</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>prints_per_culture.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Culture&#39;</span>)</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Number of Prints&#39;</span>)</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Number of Prints per Culture&#39;</span>)</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<div class="output display_data">
-<p><img
-src="Imgs/e7edb444694c8e5afa342aa2404970bafe5c9431.png" /></p>
-</div>
+<p>Number of Objects Added per Year: We made this line plot by first
+creating a new dataframe and displaying the size of objects per year
+added. It is important to note that due to scale we filtered out years
+smaller than zero(bce) which is something we will need to address later
+in the project.</p>
 </div>
 <div class="cell markdown" id="LiekbVWYVfOC">
 <p>Number of Prints per Culture: This is a plot of a groupby dataframe
 of the previous print_df (just a df of all Prints) but now it is grouped
 by Culture. This is then plotted into a bar graph.</p>
 </div>
-<div class="cell code"
+<div class="cell code" data-execution_count="14"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="xPpJZTID9EMX" data-outputId="03a169f4-ca79-4272-df28-2f4a08c01ad5">
-<div class="sourceCode" id="cb22"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Culture&#39;</span>].value_counts()</span></code></pre></div>
-<div class="output execute_result" data-execution_count="10">
-<pre><code>American                       22167
+id="xPpJZTID9EMX" data-outputId="71b3bce5-1378-4a7f-c793-74e5abec4161">
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Culture&#39;</span>].value_counts()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="14">
+<pre><code>Culture
+American                       22167
 French                         18224
 Japan                          16374
 China                          13844
@@ -849,24 +1091,24 @@ American Eskimo (Alaska)           1
 possibly German, Königsberg        1
 Russian (Petrograd)                1
 French, presumably Paris           1
-Name: Culture, Length: 7101, dtype: int64</code></pre>
+Name: count, Length: 7101, dtype: int64</code></pre>
 </div>
 </div>
-<div class="cell code"
+<div class="cell code" data-execution_count="15"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:650}"
-id="_0eiKySJ8q_9" data-outputId="3faf2032-5512-4ef0-86fb-e28457f4e128">
-<div class="sourceCode" id="cb24"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>newfiltered_df <span class="op">=</span> df[<span class="st">&#39;Culture&#39;</span>].value_counts()[df[<span class="st">&#39;Culture&#39;</span>].value_counts() <span class="op">&gt;</span> <span class="dv">500</span>]</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the bar chart for the filtered counts</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>newfiltered_df.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Culture&#39;</span>)</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Count&#39;</span>)</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Distribution of Cultures (Counts &gt; 500)&#39;</span>)</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+id="_0eiKySJ8q_9" data-outputId="95c92457-f63c-49cf-e885-0f1e7c7c9189">
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>newfiltered_df <span class="op">=</span> df[<span class="st">&#39;Culture&#39;</span>].value_counts()[df[<span class="st">&#39;Culture&#39;</span>].value_counts() <span class="op">&gt;</span> <span class="dv">500</span>]</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the bar chart for the filtered counts</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>newfiltered_df.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Culture&#39;</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Count&#39;</span>)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Distribution of Cultures (Counts &gt; 500)&#39;</span>)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="output display_data">
 <p><img
-src="Imgs/70ce4cd89644439245e07cac4fd3b34f23fdaf41.png" /></p>
+src="vertopal_2d7e2fdb315f452c88101af61eb02bbe/70ce4cd89644439245e07cac4fd3b34f23fdaf41.png" /></p>
 </div>
 </div>
 <div class="cell markdown" id="iEtzyBZ-ViK5">
@@ -877,6 +1119,40 @@ had space to show those cultures with more than 500 objects at the
 museum). It is interesting to compare this metric, which has the most
 objects from America, to the Prints culture distribution, where American
 prints takes up a much smaller amount.</p>
+</div>
+<div class="cell code" data-execution_count="15"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:898}"
+id="2aR9Oebwwf96" data-outputId="d420e553-89b7-41c9-d881-69630f37d259">
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>newfiltered_df <span class="op">=</span> df[<span class="st">&#39;Artist Display Name&#39;</span>].value_counts()[df[<span class="st">&#39;Artist Display Name&#39;</span>].value_counts() <span class="op">&gt;</span> <span class="dv">500</span>]</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the bar chart for the filtered counts</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>newfiltered_df.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Artist Display Name&#39;</span>)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Count&#39;</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Distribution of Artists(Counts &gt; 500)&#39;</span>)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="output display_data">
+<p><img
+src="vertopal_2d7e2fdb315f452c88101af61eb02bbe/70eb1ec2b2ab01418c931678b7cdee950f10cfbd.png" /></p>
+</div>
+</div>
+<div class="cell code" data-execution_count="16"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:840}"
+id="cJ6HNUiLxDdV" data-outputId="22a41bd4-8704-4d3b-e9ca-f055e027d8a6">
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>newfiltered_df <span class="op">=</span> df[<span class="st">&#39;Period&#39;</span>].value_counts()[df[<span class="st">&#39;Period&#39;</span>].value_counts() <span class="op">&gt;</span> <span class="dv">500</span>]</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the bar chart for the filtered counts</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>newfiltered_df.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Period&#39;</span>)</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Count&#39;</span>)</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Distribution of Period(Counts &gt; 500)&#39;</span>)</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="output display_data">
+<p><img
+src="vertopal_2d7e2fdb315f452c88101af61eb02bbe/0bc2f2268a356fdae530e35caa391fecb29bedcf.png" /></p>
+</div>
 </div>
 <div class="cell markdown" id="Ql84gBXVVkic">
 <p>Collaboration Plan: We will be working together at least once or
@@ -894,6 +1170,20 @@ differ in terms of size of collection and place of origin? What time
 period contains the most objects/most diverse set of artists? This would
 be even more interesting if/when we incorporate the data from MOMA to
 see how the two museums differ.</p>
+</div>
+<div class="cell markdown" id="dPBb6EwQTv__">
+<p>Model Plan: For our model ideas, we plan to use the location,
+culture, artist, and classification variables to determine the time/year
+that a piece of art was made. For our EDA graphs, we have show graphs of
+year of creation based on varying factors such as region, culture,
+artist, etc. For our two models, we want to have one model that
+determines time of creation based on the above factors INCLUDING
+information about the artist. For another model idea, we want to make a
+model that predicts time of creation based on the above factors but
+EXCLUDING information about the artist. We want to do this because there
+are many pieces that were found without any access to the artist. WE
+believe this model could help predict time of creation of an object even
+without knowing who the artist is.</p>
 </div>
 </body>
 </html>
