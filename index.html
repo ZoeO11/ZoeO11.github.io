@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>fc68bd04e95c485393e23f766f1a5665</title>
+  <title>72430b86b6584fe5b78d3333bf3752e9</title>
   <style>
     html {
       line-height: 1.5;
@@ -228,8 +228,8 @@
 </head>
 <body>
 <div class="cell code" data-execution_count="1"
-data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:105}"
-id="Jw2R3xOGVrIl" data-outputId="cb09a882-89b5-4af8-ef89-2281b861c124">
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:122}"
+id="Jw2R3xOGVrIl" data-outputId="99a10089-a674-4ae7-9a37-6cd14a762329">
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Zoe Oboler <span class="kw">and</span> Izzy Blair, <span class="st">&quot;Comparing Artwork Metadata&quot;</span>, link: https:<span class="op">//</span>zoeo11.github.io<span class="op">/</span></span></code></pre></div>
 <div class="output error" data-ename="SyntaxError"
@@ -256,271 +256,107 @@ go through (this is why we are not using Github because of their file
 size restrictions). Each row (representing one object) holds more than
 43 columns of data, some of which include the department of the museum,
 the nationality of the artist as well as time period, the type of
-object, the date the object was recorded/collected, and more. So far, we
-have compiled visualizations for the type of objects (or
-classification), the number of prints added per year, and the number of
-prints per culture, as well as the distribution of objects across
-different cultures.</p>
+object, the date the object was recorded/collected, and more. We have
+compiled visualizations for the grouping of various objects, which will
+help us further in our predictive model.</p>
+<p>Our model will use this data to predict the date of creation (i.e.,
+"Object Begin Date") based off of other criteria. This model will be an
+especially helpful tool for predicting Begin Date for older objects, as
+many older objects in the database are lacking information.</p>
 </div>
-<div class="cell code"
-data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}"
-id="Hzc0O6rQxUnE" data-outputId="b688227e-c1d0-4cc8-990a-5e2e3b427427">
+<div class="cell markdown" id="BndDAZO_zS3x">
+<p>Collaboration Plan: We will be working together at least once or
+twice a week (we have met up four times and collaborated virtually more
+times) in order to decide what metrics we want to display as well as how
+to go about visualizing them. Our original plan was to have metadata
+from the Met Museum. However, the data is so large that we have only had
+the capacity to work on the Met Museum data thus far. There are plenty
+of ways to analyze the data with just one dataset, however, as so much
+information is provided about each object. Some questions we hope to
+answer are: How do objects from different cultures compare to each other
+in terms of collection date, creation date, and object type? How do
+different object types differ in terms of size of collection and place
+of origin? What time period contains the most objects/most diverse set
+of artists?</p>
+</div>
+<div class="cell code" id="Hzc0O6rQxUnE">
 <div class="sourceCode" id="cb3"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>shell</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>jupyter nbconvert <span class="op">--</span>to html <span class="op">/</span>PATH<span class="op">/</span>TO<span class="op">/</span>YOUR<span class="op">/</span>NOTEBOOKFILE.ipynb</span></code></pre></div>
-<div class="output stream stdout">
-<pre><code>[NbConvertApp] WARNING | pattern &#39;/PATH/TO/YOUR/NOTEBOOKFILE.ipynb&#39; matched no files
-This application is used to convert notebook files (*.ipynb)
-        to various other formats.
-
-        WARNING: THE COMMANDLINE INTERFACE MAY CHANGE IN FUTURE RELEASES.
-
-Options
-=======
-The options below are convenience aliases to configurable class-options,
-as listed in the &quot;Equivalent to&quot; description-line of the aliases.
-To see all configurable class-options for some &lt;cmd&gt;, use:
-    &lt;cmd&gt; --help-all
-
---debug
-    set log level to logging.DEBUG (maximize logging output)
-    Equivalent to: [--Application.log_level=10]
---show-config
-    Show the application&#39;s configuration (human-readable format)
-    Equivalent to: [--Application.show_config=True]
---show-config-json
-    Show the application&#39;s configuration (json format)
-    Equivalent to: [--Application.show_config_json=True]
---generate-config
-    generate default config file
-    Equivalent to: [--JupyterApp.generate_config=True]
--y
-    Answer yes to any questions instead of prompting.
-    Equivalent to: [--JupyterApp.answer_yes=True]
---execute
-    Execute the notebook prior to export.
-    Equivalent to: [--ExecutePreprocessor.enabled=True]
---allow-errors
-    Continue notebook execution even if one of the cells throws an error and include the error message in the cell output (the default behaviour is to abort conversion). This flag is only relevant if &#39;--execute&#39; was specified, too.
-    Equivalent to: [--ExecutePreprocessor.allow_errors=True]
---stdin
-    read a single notebook file from stdin. Write the resulting notebook with default basename &#39;notebook.*&#39;
-    Equivalent to: [--NbConvertApp.from_stdin=True]
---stdout
-    Write notebook output to stdout instead of files.
-    Equivalent to: [--NbConvertApp.writer_class=StdoutWriter]
---inplace
-    Run nbconvert in place, overwriting the existing notebook (only
-            relevant when converting to notebook format)
-    Equivalent to: [--NbConvertApp.use_output_suffix=False --NbConvertApp.export_format=notebook --FilesWriter.build_directory=]
---clear-output
-    Clear output of current file and save in place,
-            overwriting the existing notebook.
-    Equivalent to: [--NbConvertApp.use_output_suffix=False --NbConvertApp.export_format=notebook --FilesWriter.build_directory= --ClearOutputPreprocessor.enabled=True]
---no-prompt
-    Exclude input and output prompts from converted document.
-    Equivalent to: [--TemplateExporter.exclude_input_prompt=True --TemplateExporter.exclude_output_prompt=True]
---no-input
-    Exclude input cells and output prompts from converted document.
-            This mode is ideal for generating code-free reports.
-    Equivalent to: [--TemplateExporter.exclude_output_prompt=True --TemplateExporter.exclude_input=True --TemplateExporter.exclude_input_prompt=True]
---allow-chromium-download
-    Whether to allow downloading chromium if no suitable version is found on the system.
-    Equivalent to: [--WebPDFExporter.allow_chromium_download=True]
---disable-chromium-sandbox
-    Disable chromium security sandbox when converting to PDF..
-    Equivalent to: [--WebPDFExporter.disable_sandbox=True]
---show-input
-    Shows code input. This flag is only useful for dejavu users.
-    Equivalent to: [--TemplateExporter.exclude_input=False]
---embed-images
-    Embed the images as base64 dataurls in the output. This flag is only useful for the HTML/WebPDF/Slides exports.
-    Equivalent to: [--HTMLExporter.embed_images=True]
---sanitize-html
-    Whether the HTML in Markdown cells and cell outputs should be sanitized..
-    Equivalent to: [--HTMLExporter.sanitize_html=True]
---log-level=&lt;Enum&gt;
-    Set the log level by value or name.
-    Choices: any of [0, 10, 20, 30, 40, 50, &#39;DEBUG&#39;, &#39;INFO&#39;, &#39;WARN&#39;, &#39;ERROR&#39;, &#39;CRITICAL&#39;]
-    Default: 30
-    Equivalent to: [--Application.log_level]
---config=&lt;Unicode&gt;
-    Full path of a config file.
-    Default: &#39;&#39;
-    Equivalent to: [--JupyterApp.config_file]
---to=&lt;Unicode&gt;
-    The export format to be used, either one of the built-in formats
-            [&#39;asciidoc&#39;, &#39;custom&#39;, &#39;html&#39;, &#39;latex&#39;, &#39;markdown&#39;, &#39;notebook&#39;, &#39;pdf&#39;, &#39;python&#39;, &#39;rst&#39;, &#39;script&#39;, &#39;slides&#39;, &#39;webpdf&#39;]
-            or a dotted object name that represents the import path for an
-            ``Exporter`` class
-    Default: &#39;&#39;
-    Equivalent to: [--NbConvertApp.export_format]
---template=&lt;Unicode&gt;
-    Name of the template to use
-    Default: &#39;&#39;
-    Equivalent to: [--TemplateExporter.template_name]
---template-file=&lt;Unicode&gt;
-    Name of the template file to use
-    Default: None
-    Equivalent to: [--TemplateExporter.template_file]
---theme=&lt;Unicode&gt;
-    Template specific theme(e.g. the name of a JupyterLab CSS theme distributed
-    as prebuilt extension for the lab template)
-    Default: &#39;light&#39;
-    Equivalent to: [--HTMLExporter.theme]
---sanitize_html=&lt;Bool&gt;
-    Whether the HTML in Markdown cells and cell outputs should be sanitized.This
-    should be set to True by nbviewer or similar tools.
-    Default: False
-    Equivalent to: [--HTMLExporter.sanitize_html]
---writer=&lt;DottedObjectName&gt;
-    Writer class used to write the
-                                        results of the conversion
-    Default: &#39;FilesWriter&#39;
-    Equivalent to: [--NbConvertApp.writer_class]
---post=&lt;DottedOrNone&gt;
-    PostProcessor class used to write the
-                                        results of the conversion
-    Default: &#39;&#39;
-    Equivalent to: [--NbConvertApp.postprocessor_class]
---output=&lt;Unicode&gt;
-    overwrite base name use for output files.
-                can only be used when converting one notebook at a time.
-    Default: &#39;&#39;
-    Equivalent to: [--NbConvertApp.output_base]
---output-dir=&lt;Unicode&gt;
-    Directory to write output(s) to. Defaults
-                                  to output to the directory of each notebook. To recover
-                                  previous default behaviour (outputting to the current
-                                  working directory) use . as the flag value.
-    Default: &#39;&#39;
-    Equivalent to: [--FilesWriter.build_directory]
---reveal-prefix=&lt;Unicode&gt;
-    The URL prefix for reveal.js (version 3.x).
-            This defaults to the reveal CDN, but can be any url pointing to a copy
-            of reveal.js.
-            For speaker notes to work, this must be a relative path to a local
-            copy of reveal.js: e.g., &quot;reveal.js&quot;.
-            If a relative path is given, it must be a subdirectory of the
-            current directory (from which the server is run).
-            See the usage documentation
-            (https://nbconvert.readthedocs.io/en/latest/usage.html#reveal-js-html-slideshow)
-            for more details.
-    Default: &#39;&#39;
-    Equivalent to: [--SlidesExporter.reveal_url_prefix]
---nbformat=&lt;Enum&gt;
-    The nbformat version to write.
-            Use this to downgrade notebooks.
-    Choices: any of [1, 2, 3, 4]
-    Default: 4
-    Equivalent to: [--NotebookExporter.nbformat_version]
-
-Examples
---------
-
-    The simplest way to use nbconvert is
-
-            &gt; jupyter nbconvert mynotebook.ipynb --to html
-
-            Options include [&#39;asciidoc&#39;, &#39;custom&#39;, &#39;html&#39;, &#39;latex&#39;, &#39;markdown&#39;, &#39;notebook&#39;, &#39;pdf&#39;, &#39;python&#39;, &#39;rst&#39;, &#39;script&#39;, &#39;slides&#39;, &#39;webpdf&#39;].
-
-            &gt; jupyter nbconvert --to latex mynotebook.ipynb
-
-            Both HTML and LaTeX support multiple output templates. LaTeX includes
-            &#39;base&#39;, &#39;article&#39; and &#39;report&#39;.  HTML includes &#39;basic&#39;, &#39;lab&#39; and
-            &#39;classic&#39;. You can specify the flavor of the format used.
-
-            &gt; jupyter nbconvert --to html --template lab mynotebook.ipynb
-
-            You can also pipe the output to stdout, rather than a file
-
-            &gt; jupyter nbconvert mynotebook.ipynb --stdout
-
-            PDF is generated via latex
-
-            &gt; jupyter nbconvert mynotebook.ipynb --to pdf
-
-            You can get (and serve) a Reveal.js-powered slideshow
-
-            &gt; jupyter nbconvert myslides.ipynb --to slides --post serve
-
-            Multiple notebooks can be given at the command line in a couple of
-            different ways:
-
-            &gt; jupyter nbconvert notebook*.ipynb
-            &gt; jupyter nbconvert notebook1.ipynb notebook2.ipynb
-
-            or you can specify the notebooks list in a config file, containing::
-
-                c.NbConvertApp.notebooks = [&quot;my_notebook.ipynb&quot;]
-
-            &gt; jupyter nbconvert --config mycfg.py
-
-To see all available configurables, use `--help-all`.
-
-</code></pre>
-</div>
-<div class="output error" data-ename="CalledProcessError"
-data-evalue="Command &#39;jupyter nbconvert --to html /PATH/TO/YOUR/NOTEBOOKFILE.ipynb
-&#39; returned non-zero exit status 255.">
-<pre><code>---------------------------------------------------------------------------
-CalledProcessError                        Traceback (most recent call last)
-&lt;ipython-input-6-d80799e6cbdb&gt; in &lt;cell line: 1&gt;()
-----&gt; 1 get_ipython().run_cell_magic(&#39;shell&#39;, &#39;&#39;, &#39;jupyter nbconvert --to html /PATH/TO/YOUR/NOTEBOOKFILE.ipynb\n&#39;)
-
-/usr/local/lib/python3.10/dist-packages/google/colab/_shell.py in run_cell_magic(self, magic_name, line, cell)
-    332     if line and not cell:
-    333       cell = &#39; &#39;
---&gt; 334     return super().run_cell_magic(magic_name, line, cell)
-    335 
-    336 
-
-/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py in run_cell_magic(self, magic_name, line, cell)
-   2471             with self.builtin_trap:
-   2472                 args = (magic_arg_s, cell)
--&gt; 2473                 result = fn(*args, **kwargs)
-   2474             return result
-   2475 
-
-/usr/local/lib/python3.10/dist-packages/google/colab/_system_commands.py in _shell_cell_magic(args, cmd)
-    110   result = _run_command(cmd, clear_streamed_output=False)
-    111   if not parsed_args.ignore_errors:
---&gt; 112     result.check_returncode()
-    113   return result
-    114 
-
-/usr/local/lib/python3.10/dist-packages/google/colab/_system_commands.py in check_returncode(self)
-    135   def check_returncode(self):
-    136     if self.returncode:
---&gt; 137       raise subprocess.CalledProcessError(
-    138           returncode=self.returncode, cmd=self.args, output=self.output
-    139       )
-
-CalledProcessError: Command &#39;jupyter nbconvert --to html /PATH/TO/YOUR/NOTEBOOKFILE.ipynb
-&#39; returned non-zero exit status 255.
-</code></pre>
-</div>
 </div>
 <div class="cell code" data-execution_count="2"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="gqGSZw6axnCB" data-outputId="662ca39e-ca3e-4322-831d-eddf227c9c14">
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>drive.mount(<span class="st">&#39;/content/drive&#39;</span>)</span></code></pre></div>
+id="gqGSZw6axnCB" data-outputId="d84c0061-6624-4987-935e-75792e6cddcd">
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>drive.mount(<span class="st">&#39;/content/drive&#39;</span>)</span></code></pre></div>
 <div class="output stream stdout">
-<pre><code>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(&quot;/content/drive&quot;, force_remount=True).
+<pre><code>Mounted at /content/drive
 </code></pre>
 </div>
 </div>
 <div class="cell code" data-execution_count="3" id="cw_sVWU3CdC-">
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="5"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:333}"
+id="NQSrdoIOyEUx" data-outputId="df103b73-7072-40d7-ca62-7679a2b48666">
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;/content/drive/MyDrive/MetObjects.csv&quot;</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div>
+<div class="output error" data-ename="FileNotFoundError"
+data-evalue="[Errno 2] No such file or directory: &#39;/content/drive/MyDrive/MetObjects.csv&#39;">
+<pre><code>---------------------------------------------------------------------------
+FileNotFoundError                         Traceback (most recent call last)
+&lt;ipython-input-5-6c1a4f58638b&gt; in &lt;cell line: 1&gt;()
+----&gt; 1 df = pd.read_csv(&quot;/content/drive/MyDrive/MetObjects.csv&quot;)
+      2 df.head()
+
+/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py in read_csv(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)
+    910     kwds.update(kwds_defaults)
+    911 
+--&gt; 912     return _read(filepath_or_buffer, kwds)
+    913 
+    914 
+
+/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py in _read(filepath_or_buffer, kwds)
+    575 
+    576     # Create the parser.
+--&gt; 577     parser = TextFileReader(filepath_or_buffer, **kwds)
+    578 
+    579     if chunksize or iterator:
+
+/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py in __init__(self, f, engine, **kwds)
+   1405 
+   1406         self.handles: IOHandles | None = None
+-&gt; 1407         self._engine = self._make_engine(f, self.engine)
+   1408 
+   1409     def close(self) -&gt; None:
+
+/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py in _make_engine(self, f, engine)
+   1659                 if &quot;b&quot; not in mode:
+   1660                     mode += &quot;b&quot;
+-&gt; 1661             self.handles = get_handle(
+   1662                 f,
+   1663                 mode,
+
+/usr/local/lib/python3.10/dist-packages/pandas/io/common.py in get_handle(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)
+    857         if ioargs.encoding and &quot;b&quot; not in ioargs.mode:
+    858             # Encoding
+--&gt; 859             handle = open(
+    860                 handle,
+    861                 ioargs.mode,
+
+FileNotFoundError: [Errno 2] No such file or directory: &#39;/content/drive/MyDrive/MetObjects.csv&#39;
+</code></pre>
+</div>
 </div>
 <div class="cell code" data-execution_count="4"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:661}"
-id="oxu-5r9SEr1C" data-outputId="6f1898fe-b50d-4614-9cb7-4f96f7762eca">
+id="oxu-5r9SEr1C" data-outputId="e08e7d8b-81a6-4809-a221-aee825962bb8">
 <div class="sourceCode" id="cb9"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;/content/drive/MyDrive/ArtMetaData/MetObjects.csv&quot;</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div>
@@ -531,7 +367,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a hr
 </div>
 <div class="output execute_result" data-execution_count="4">
 
-  <div id="df-b46ac2f0-e8b2-4395-85a2-663ccd35da32" class="colab-df-container">
+  <div id="df-97a11a2e-ec2e-47cc-a931-cc1d5d0eafec" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -701,7 +537,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a hr
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-b46ac2f0-e8b2-4395-85a2-663ccd35da32')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-97a11a2e-ec2e-47cc-a931-cc1d5d0eafec')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -753,12 +589,12 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a hr
 
     <script>
       const buttonEl =
-        document.querySelector('#df-b46ac2f0-e8b2-4395-85a2-663ccd35da32 button.colab-df-convert');
+        document.querySelector('#df-97a11a2e-ec2e-47cc-a931-cc1d5d0eafec button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-b46ac2f0-e8b2-4395-85a2-663ccd35da32');
+        const element = document.querySelector('#df-97a11a2e-ec2e-47cc-a931-cc1d5d0eafec');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -778,8 +614,8 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a hr
   </div>
 
 
-<div id="df-c1296d51-14db-4aef-acc2-144b87946afc">
-  <button class="colab-df-quickchart" onclick="quickchart('df-c1296d51-14db-4aef-acc2-144b87946afc')"
+<div id="df-0c2eefb6-3060-4cc7-8483-7b1ac718e70e">
+  <button class="colab-df-quickchart" onclick="quickchart('df-0c2eefb6-3060-4cc7-8483-7b1ac718e70e')"
             title="Suggest charts"
             style="display:none;">
 
@@ -898,7 +734,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a hr
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-c1296d51-14db-4aef-acc2-144b87946afc button');
+        document.querySelector('#df-0c2eefb6-3060-4cc7-8483-7b1ac718e70e button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -910,18 +746,23 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a hr
 
 </div>
 </div>
-<div class="cell code" data-execution_count="5"
+<div class="cell code" data-execution_count="6"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="Oda9MQOZHNxO" data-outputId="0c9d3814-a79d-423d-9da3-d56053d4efe8">
+id="Oda9MQOZHNxO" data-outputId="dbbf4dad-b40b-4c90-9ead-8fc6a414ceaa">
 <div class="sourceCode" id="cb11"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code></pre></div>
-<div class="output execute_result" data-execution_count="5">
+<div class="output execute_result" data-execution_count="6">
 <pre><code>(448203, 43)</code></pre>
 </div>
 </div>
-<div class="cell code" data-execution_count="6"
+<div class="cell markdown" id="bOUsvGDynBCD">
+<p>As you can see below, there are a lot of columns of data. Many of
+these columns have a lot of NaN values, which we will clean up in order
+to make the data usable.</p>
+</div>
+<div class="cell code" data-execution_count="7"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="SzYl0dFe1mkI" data-outputId="765f9853-1ffc-407f-99f9-63cd5945ec53">
+id="SzYl0dFe1mkI" data-outputId="7c03a141-1aab-45ca-e1ca-b4e02e112610">
 <div class="sourceCode" id="cb13"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.columns.tolist())</span></code></pre></div>
 <div class="output stream stdout">
@@ -929,12 +770,12 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a h
 </code></pre>
 </div>
 </div>
-<div class="cell code" data-execution_count="7"
+<div class="cell code" data-execution_count="8"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="nNCaVG6r1sfI" data-outputId="f9cd0a8f-bc5a-4faf-93d1-013eb916f129">
+id="nNCaVG6r1sfI" data-outputId="26c98aa6-a2a9-40a3-dd33-d31d765024a2">
 <div class="sourceCode" id="cb15"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Object Begin Date&#39;</span>].value_counts()</span></code></pre></div>
-<div class="output execute_result" data-execution_count="7">
+<div class="output execute_result" data-execution_count="8">
 <pre><code>Object Begin Date
  1800    23579
  1700    16355
@@ -950,12 +791,12 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a h
 Name: count, Length: 2074, dtype: int64</code></pre>
 </div>
 </div>
-<div class="cell code" data-execution_count="8"
+<div class="cell code" data-execution_count="9"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="RWjT8msqvC_x" data-outputId="3ac1c823-2718-4d35-c31e-aed9c53340e6">
+id="RWjT8msqvC_x" data-outputId="e3692643-6072-4446-f192-09424f9b4c29">
 <div class="sourceCode" id="cb17"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Classification&#39;</span>].value_counts()</span></code></pre></div>
-<div class="output execute_result" data-execution_count="8">
+<div class="output execute_result" data-execution_count="9">
 <pre><code>Classification
 Prints                                       69260
 Prints|Ephemera                              30033
@@ -971,12 +812,12 @@ Paper-Documents|Prints                           1
 Name: count, Length: 1077, dtype: int64</code></pre>
 </div>
 </div>
-<div class="cell code" data-execution_count="9"
+<div class="cell code" data-execution_count="10"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="OnNXVbEO1Rjo" data-outputId="8a55dffe-d790-4555-a3ee-1532871788fe">
+id="OnNXVbEO1Rjo" data-outputId="ad0bf0be-09ec-4484-c029-ac1635a7f225">
 <div class="sourceCode" id="cb19"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Period&#39;</span>].value_counts()</span></code></pre></div>
-<div class="output execute_result" data-execution_count="9">
+<div class="output execute_result" data-execution_count="10">
 <pre><code>Period
 Edo period (1615–1868)                           8710
 New Kingdom                                      6594
@@ -992,9 +833,16 @@ Ramesside/Third Intermediate Period                 1
 Name: count, Length: 1695, dtype: int64</code></pre>
 </div>
 </div>
-<div class="cell code" data-execution_count="8"
+<div class="cell markdown" id="T1jbUIWrnJvv">
+<p>The below cell transforms the date column as given, which has an
+unusable date format. Many objects have more than one year listed, as
+some objects took many years to make. In order to just have on year of
+usable data, we compute the average of all the years and then update the
+date column to reflect this change.</p>
+</div>
+<div class="cell code" data-execution_count="11"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="mFC1rGjX4Y2x" data-outputId="205d5936-3440-419d-f3d7-e807b2edee73">
+id="mFC1rGjX4Y2x" data-outputId="9b626cbb-1631-4e6a-8081-e992bc65c0f6">
 <div class="sourceCode" id="cb21"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> df</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>two_year_rows <span class="op">=</span> df2[df2[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">&gt;</span> <span class="dv">9999</span>]</span>
@@ -1005,7 +853,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a h
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Update the original DataFrame with the modified values</span></span>
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>df.update(two_year_rows)</span></code></pre></div>
 <div class="output stream stderr">
-<pre><code>&lt;ipython-input-8-980bb0026b24&gt;:5: SettingWithCopyWarning: 
+<pre><code>&lt;ipython-input-11-980bb0026b24&gt;:5: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -1014,9 +862,14 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </code></pre>
 </div>
 </div>
-<div class="cell code" data-execution_count="11"
+<div class="cell markdown" id="28k27cwbndzU">
+<p>Below, we filter our original dataframe to show the distribution of
+classification of objects where the MET has more than 2000 of such
+objects.</p>
+</div>
+<div class="cell code" data-execution_count="12"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:723}"
-id="4WE-0Lduvfpe" data-outputId="0db8027e-1200-429e-ae18-a0204d3e2ccb">
+id="4WE-0Lduvfpe" data-outputId="c386481d-36f8-44fc-92cf-c7856ec3467b">
 <div class="sourceCode" id="cb23"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="op">=</span> df[<span class="st">&#39;Classification&#39;</span>].value_counts()[df[<span class="st">&#39;Classification&#39;</span>].value_counts() <span class="op">&gt;</span> <span class="dv">2000</span>]</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1028,7 +881,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a h
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="output display_data">
 <p><img
-src="vertopal_2d7e2fdb315f452c88101af61eb02bbe/422b46b16343080ef4656b2d49c301f92f7b5282.png" /></p>
+src="vertopal_0122a43e514f4820a31fc9c26f6fe6c6/422b46b16343080ef4656b2d49c301f92f7b5282.png" /></p>
 </div>
 </div>
 <div class="cell markdown" id="21NKxAwQVbh5">
@@ -1039,14 +892,14 @@ did this by filtering our dataframe into the value counts that are
 greater than 2000, and then used matplotlib to visualize the data into a
 bar graph.</p>
 </div>
-<div class="cell code" data-execution_count="10"
+<div class="cell code" data-execution_count="13"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}"
-id="WsF7vNF3y4qC" data-outputId="9f68206c-9357-4d9b-d36a-44f35b8e0ed6">
+id="WsF7vNF3y4qC" data-outputId="eb81e992-8a97-4c06-e298-9a1d27501238">
 <div class="sourceCode" id="cb24"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by &#39;Object Begin Date&#39; (year) and count the number of prints</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> df2.loc[df[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">&gt;=</span> <span class="dv">0</span>]</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> df2.loc[(df[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">&gt;=</span> <span class="dv">0</span>) <span class="op">&amp;</span> (df[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">&lt;=</span> <span class="dv">2024</span>)]</span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>obj_per_year <span class="op">=</span> df3.groupby(<span class="st">&#39;Object Begin Date&#39;</span>).size()</span>
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the line graph</span></span>
@@ -1058,7 +911,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a h
 <span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="output display_data">
 <p><img
-src="vertopal_2d7e2fdb315f452c88101af61eb02bbe/405040c289c12a6727c1704638aef50361466b98.png" /></p>
+src="vertopal_0122a43e514f4820a31fc9c26f6fe6c6/e44f8bf6f65c4b0ecde8b91c509fcb1a2778453f.png" /></p>
 </div>
 </div>
 <div class="cell markdown" id="fSCkaCl3Vc9k">
@@ -1075,7 +928,7 @@ by Culture. This is then plotted into a bar graph.</p>
 </div>
 <div class="cell code" data-execution_count="14"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
-id="xPpJZTID9EMX" data-outputId="71b3bce5-1378-4a7f-c793-74e5abec4161">
+id="xPpJZTID9EMX" data-outputId="1ac9c0e7-049c-4f97-8f33-3371e585574a">
 <div class="sourceCode" id="cb25"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Culture&#39;</span>].value_counts()</span></code></pre></div>
 <div class="output execute_result" data-execution_count="14">
@@ -1096,7 +949,7 @@ Name: count, Length: 7101, dtype: int64</code></pre>
 </div>
 <div class="cell code" data-execution_count="15"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:650}"
-id="_0eiKySJ8q_9" data-outputId="95c92457-f63c-49cf-e885-0f1e7c7c9189">
+id="_0eiKySJ8q_9" data-outputId="cf157c1f-e594-421f-c858-faba07fe1f1f">
 <div class="sourceCode" id="cb27"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>newfiltered_df <span class="op">=</span> df[<span class="st">&#39;Culture&#39;</span>].value_counts()[df[<span class="st">&#39;Culture&#39;</span>].value_counts() <span class="op">&gt;</span> <span class="dv">500</span>]</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1108,7 +961,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a h
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="output display_data">
 <p><img
-src="vertopal_2d7e2fdb315f452c88101af61eb02bbe/70ce4cd89644439245e07cac4fd3b34f23fdaf41.png" /></p>
+src="vertopal_0122a43e514f4820a31fc9c26f6fe6c6/70ce4cd89644439245e07cac4fd3b34f23fdaf41.png" /></p>
 </div>
 </div>
 <div class="cell markdown" id="iEtzyBZ-ViK5">
@@ -1120,9 +973,9 @@ museum). It is interesting to compare this metric, which has the most
 objects from America, to the Prints culture distribution, where American
 prints takes up a much smaller amount.</p>
 </div>
-<div class="cell code" data-execution_count="15"
+<div class="cell code" data-execution_count="16"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:898}"
-id="2aR9Oebwwf96" data-outputId="d420e553-89b7-41c9-d881-69630f37d259">
+id="2aR9Oebwwf96" data-outputId="2516d5e7-dec5-4acd-b825-904dab2d318e">
 <div class="sourceCode" id="cb28"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>newfiltered_df <span class="op">=</span> df[<span class="st">&#39;Artist Display Name&#39;</span>].value_counts()[df[<span class="st">&#39;Artist Display Name&#39;</span>].value_counts() <span class="op">&gt;</span> <span class="dv">500</span>]</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1134,12 +987,16 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a h
 <span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="output display_data">
 <p><img
-src="vertopal_2d7e2fdb315f452c88101af61eb02bbe/70eb1ec2b2ab01418c931678b7cdee950f10cfbd.png" /></p>
+src="vertopal_0122a43e514f4820a31fc9c26f6fe6c6/70eb1ec2b2ab01418c931678b7cdee950f10cfbd.png" /></p>
 </div>
 </div>
-<div class="cell code" data-execution_count="16"
+<div class="cell markdown" id="HCKb2HnInsnj">
+<p>We show here the distribution of artists by display name (as in the
+name on display at the MET museum).<strong>bold text</strong></p>
+</div>
+<div class="cell code" data-execution_count="17"
 data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:840}"
-id="cJ6HNUiLxDdV" data-outputId="22a41bd4-8704-4d3b-e9ca-f055e027d8a6">
+id="cJ6HNUiLxDdV" data-outputId="bf7a9d17-735a-4e3e-9b86-1d01d5b35c34">
 <div class="sourceCode" id="cb29"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>newfiltered_df <span class="op">=</span> df[<span class="st">&#39;Period&#39;</span>].value_counts()[df[<span class="st">&#39;Period&#39;</span>].value_counts() <span class="op">&gt;</span> <span class="dv">500</span>]</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1151,39 +1008,601 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a h
 <span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="output display_data">
 <p><img
-src="vertopal_2d7e2fdb315f452c88101af61eb02bbe/0bc2f2268a356fdae530e35caa391fecb29bedcf.png" /></p>
+src="vertopal_0122a43e514f4820a31fc9c26f6fe6c6/0bc2f2268a356fdae530e35caa391fecb29bedcf.png" /></p>
 </div>
 </div>
-<div class="cell markdown" id="Ql84gBXVVkic">
-<p>Collaboration Plan: We will be working together at least once or
-twice a week (we have met up four times and collaborated virtually more
-times) in order to decide what metrics we want to display as well as how
-to go about visualizing them. Our original plan was to have metadata
-from the Met Museum and compare it to metadata from the MOMA museum.
-However, the data is so large that we have only had the capacity to work
-on the Met Museum data thus far. There are plenty of ways to analyze the
-data with just one dataset, however, as so much information is provided
-about each object. Some questions we hope to answer are: How do objects
-from different cultures compare to each other in terms of collection
-date, creation date, and object type? How do different object types
-differ in terms of size of collection and place of origin? What time
-period contains the most objects/most diverse set of artists? This would
-be even more interesting if/when we incorporate the data from MOMA to
-see how the two museums differ.</p>
+<div class="cell markdown" id="9W4JdHj0nyna">
+<p>Here we display the distribution of period. Period is a broad
+generalization of time period, but this table gives us a good idea of
+what periods most objects come from.</p>
 </div>
-<div class="cell markdown" id="dPBb6EwQTv__">
-<p>Model Plan: For our model ideas, we plan to use the location,
-culture, artist, and classification variables to determine the time/year
-that a piece of art was made. For our EDA graphs, we have show graphs of
-year of creation based on varying factors such as region, culture,
-artist, etc. For our two models, we want to have one model that
-determines time of creation based on the above factors INCLUDING
-information about the artist. For another model idea, we want to make a
-model that predicts time of creation based on the above factors but
-EXCLUDING information about the artist. We want to do this because there
-are many pieces that were found without any access to the artist. WE
-believe this model could help predict time of creation of an object even
-without knowing who the artist is.</p>
+<div class="cell markdown" id="SaJLCBlGvHfq">
+<p>Model Plan: For our model ideas, we use the location, culture,
+artist, and classification variables to determine the time/year that a
+piece of art was made. For our EDA graphs, we have shown graphs of year
+of creation based on varying factors such as region, culture, artist,
+etc. For our model, we have one model that determines time of creation
+based on the above factors INCLUDING information about the artist. For
+another model idea, we will make a model that predicts time of creation
+based on the above factors but EXCLUDING information about the artist.
+We want to do this because there are many pieces that were found without
+any access to the artist. This model could help predict time of creation
+of an object even without knowing who the artist is.</p>
+</div>
+<div class="cell markdown" id="RSr40yG7oK0h">
+<p>Below, we will be splitting the data into different eras. WE will be
+using these eras to predict possible predictions for Object Begin Date.
+We are splitting the data into eras in order to train the model, as
+there is so much data that our computers do not have sufficient RAM to
+process it all at once, even after splitting the data in other ways. We
+tried splitting the data randomly, but we found our models were not very
+predictive in those cases.</p>
+</div>
+<div class="cell code" data-execution_count="18" id="rNSLFcBf8WT5">
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a new df called dfme with only the rows from the last 100 years based on df2[&quot;Object Begin Date&quot;]</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>dfme <span class="op">=</span> df2[df2[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">&gt;=</span> <span class="dv">1922</span>]</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="19"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
+id="HthUB1Sq9osv" data-outputId="176eda25-e269-42ef-ba3a-2a7fd846799f">
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>dfme.shape</span></code></pre></div>
+<div class="output execute_result" data-execution_count="19">
+<pre><code>(73015, 43)</code></pre>
+</div>
+</div>
+<div class="cell markdown" id="KpZkzTaSo6hE">
+<p>We also drop NaN values so that our model can use the data to
+predict. We found that imputing values here skews the data, as most of
+the objects have begin dates closer to 1900-2000. So, in order to avoid
+this skewing, we simply dropped NaN values.</p>
+</div>
+<div class="cell code" data-execution_count="20" id="e86iuI9n9a1O">
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># drop dfme rows with NaN values in &quot;Classification&quot;, &quot;Culture&quot;</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>dfme <span class="op">=</span> dfme.dropna(subset<span class="op">=</span>[<span class="st">&#39;Classification&#39;</span>, <span class="st">&#39;Culture&#39;</span>])</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="21"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
+id="N0pYCKWH9RP8" data-outputId="e1983342-25b5-4a7c-a398-e45b7a365afb">
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>dfme.shape</span></code></pre></div>
+<div class="output execute_result" data-execution_count="21">
+<pre><code>(2668, 43)</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="22" id="JzRlBIvWr1yt">
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>dfme1 <span class="op">=</span> df2[(df2[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">&lt;</span> <span class="dv">1922</span>) <span class="op">&amp;</span> (df2[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">&gt;=</span> <span class="dv">1822</span>)]</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>dfme1 <span class="op">=</span> dfme1.dropna(subset<span class="op">=</span>[<span class="st">&#39;Classification&#39;</span>, <span class="st">&#39;Culture&#39;</span>])</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="23" id="aE839yMavxwD">
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>dfme2 <span class="op">=</span> df2[(df2[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">&lt;</span> <span class="dv">1821</span>) <span class="op">&amp;</span> (df2[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">&gt;=</span> <span class="dv">1750</span>)]</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>dfme2 <span class="op">=</span> dfme2.dropna(subset<span class="op">=</span>[<span class="st">&#39;Classification&#39;</span>, <span class="st">&#39;Culture&#39;</span>])</span></code></pre></div>
+</div>
+<div class="cell markdown" id="1y5mi_ZBpmJ9">
+<p>Below, we have our K-Nearest-Neighbors model to predict the Object
+Begin Date based off of Classification and Culture. We expect that this
+will not be a very predictive model, as culture is a broad
+generalization of an object (as you can see from our data above) so it
+will probably also generalize on predictions. Also, we are only
+predicting based off of the objects made after 1922. However, this is an
+important first step for our model. We will later test the accuracy of
+our model using k-fold cross validation.</p>
+</div>
+<div class="cell code" data-execution_count="41" id="JXUmiMDE0Qyq">
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction <span class="im">import</span> DictVectorizer</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsRegressor</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> Pipeline</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> cross_val_score</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>vec <span class="op">=</span> DictVectorizer(sparse<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler()</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> KNeighborsRegressor(n_neighbors<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>features <span class="op">=</span> [<span class="st">&quot;Classification&quot;</span>, <span class="st">&quot;Culture&quot;</span> ]</span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>pipeline <span class="op">=</span> Pipeline([(<span class="st">&quot;vectorizer&quot;</span>, vec), (<span class="st">&quot;scaler&quot;</span>, scaler), (<span class="st">&quot;fit&quot;</span>, model)])</span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>X_train_dict <span class="op">=</span> dfme[features].to_dict(orient<span class="op">=</span><span class="st">&quot;records&quot;</span>)</span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>y_train <span class="op">=</span> dfme[<span class="st">&quot;Object Begin Date&quot;</span>]</span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>vec <span class="op">=</span> DictVectorizer(sparse<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>vec.fit(X_train_dict)</span>
+<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>X_train <span class="op">=</span> vec.transform(X_train_dict)</span>
+<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler()</span>
+<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a>scaler.fit(X_train)</span>
+<span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a>X_train_sc <span class="op">=</span> scaler.transform(X_train)</span>
+<span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-25"><a href="#cb38-25" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> KNeighborsRegressor(n_neighbors<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb38-26"><a href="#cb38-26" aria-hidden="true" tabindex="-1"></a>model.fit(X_train_sc, y_train)</span>
+<span id="cb38-27"><a href="#cb38-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-28"><a href="#cb38-28" aria-hidden="true" tabindex="-1"></a>y_train_pred <span class="op">=</span> model.predict(X_train_sc)</span>
+<span id="cb38-29"><a href="#cb38-29" aria-hidden="true" tabindex="-1"></a>y_train_pred</span>
+<span id="cb38-30"><a href="#cb38-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-31"><a href="#cb38-31" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> cross_val_score(pipeline, X_train_dict, y_train,</span>
+<span id="cb38-32"><a href="#cb38-32" aria-hidden="true" tabindex="-1"></a>                         cv<span class="op">=</span><span class="dv">17</span>, scoring<span class="op">=</span><span class="st">&quot;neg_mean_squared_error&quot;</span>)</span></code></pre></div>
+</div>
+<div class="cell markdown" id="z810IRa9qFpP">
+<p>Below, we plot the MSE (mean squared error) for our model. We also
+plot a line that shows how our MSE changes as k increases. This tests
+the accuracy of our model and also gives us a value of k that has the
+minimum error. That k value here seems to be around six or seven.</p>
+</div>
+<div class="cell code" data-execution_count="42"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:367}"
+id="wgBLjTzX3Ogf" data-outputId="f62049fd-e3b4-4b3b-8caf-27d772779319">
+<div class="sourceCode" id="cb39"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>vec <span class="op">=</span> DictVectorizer(sparse<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler()</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>pipeline <span class="op">=</span> Pipeline([(<span class="st">&quot;vectorizer&quot;</span>, vec), (<span class="st">&quot;scaler&quot;</span>, scaler), (<span class="st">&quot;fit&quot;</span>, model)])</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_cv_error(k):</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> KNeighborsRegressor(n_neighbors<span class="op">=</span>k)</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    pipeline <span class="op">=</span> Pipeline([(<span class="st">&quot;vectorizer&quot;</span>, vec), (<span class="st">&quot;scaler&quot;</span>, scaler), (<span class="st">&quot;fit&quot;</span>, model)])</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    mse <span class="op">=</span> np.mean(<span class="op">-</span>cross_val_score(</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>        pipeline, X_train_dict, y_train,</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>        cv<span class="op">=</span><span class="dv">10</span>, scoring<span class="op">=</span><span class="st">&quot;neg_mean_squared_error&quot;</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mse</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>ks <span class="op">=</span> pd.Series(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">51</span>))</span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>ks.index <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">51</span>)</span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>test_errs <span class="op">=</span> ks.<span class="bu">apply</span>(get_cv_error)</span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>test_errs.plot.line()</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>test_errs.sort_values()</span></code></pre></div>
+<div class="output error" data-ename="KeyboardInterrupt" data-evalue="">
+<pre><code>---------------------------------------------------------------------------
+KeyboardInterrupt                         Traceback (most recent call last)
+&lt;ipython-input-42-cd249b7be27e&gt; in &lt;cell line: 16&gt;()
+     14 ks = pd.Series(range(1, 51))
+     15 ks.index = range(1, 51)
+---&gt; 16 test_errs = ks.apply(get_cv_error)
+     17 
+     18 test_errs.plot.line()
+
+/usr/local/lib/python3.10/dist-packages/pandas/core/series.py in apply(self, func, convert_dtype, args, **kwargs)
+   4628         dtype: float64
+   4629         &quot;&quot;&quot;
+-&gt; 4630         return SeriesApply(self, func, convert_dtype, args, kwargs).apply()
+   4631 
+   4632     def _reduce(
+
+/usr/local/lib/python3.10/dist-packages/pandas/core/apply.py in apply(self)
+   1023 
+   1024         # self.f is Callable
+-&gt; 1025         return self.apply_standard()
+   1026 
+   1027     def agg(self):
+
+/usr/local/lib/python3.10/dist-packages/pandas/core/apply.py in apply_standard(self)
+   1074             else:
+   1075                 values = obj.astype(object)._values
+-&gt; 1076                 mapped = lib.map_infer(
+   1077                     values,
+   1078                     f,
+
+/usr/local/lib/python3.10/dist-packages/pandas/_libs/lib.pyx in pandas._libs.lib.map_infer()
+
+&lt;ipython-input-42-cd249b7be27e&gt; in get_cv_error(k)
+      6     model = KNeighborsRegressor(n_neighbors=k)
+      7     pipeline = Pipeline([(&quot;vectorizer&quot;, vec), (&quot;scaler&quot;, scaler), (&quot;fit&quot;, model)])
+----&gt; 8     mse = np.mean(-cross_val_score(
+      9         pipeline, X_train_dict, y_train,
+     10         cv=10, scoring=&quot;neg_mean_squared_error&quot;
+
+/usr/local/lib/python3.10/dist-packages/sklearn/model_selection/_validation.py in cross_val_score(estimator, X, y, groups, scoring, cv, n_jobs, verbose, fit_params, pre_dispatch, error_score)
+    513     scorer = check_scoring(estimator, scoring=scoring)
+    514 
+--&gt; 515     cv_results = cross_validate(
+    516         estimator=estimator,
+    517         X=X,
+
+/usr/local/lib/python3.10/dist-packages/sklearn/model_selection/_validation.py in cross_validate(estimator, X, y, groups, scoring, cv, n_jobs, verbose, fit_params, pre_dispatch, return_train_score, return_estimator, error_score)
+    264     # independent, and that it is pickle-able.
+    265     parallel = Parallel(n_jobs=n_jobs, verbose=verbose, pre_dispatch=pre_dispatch)
+--&gt; 266     results = parallel(
+    267         delayed(_fit_and_score)(
+    268             clone(estimator),
+
+/usr/local/lib/python3.10/dist-packages/sklearn/utils/parallel.py in __call__(self, iterable)
+     61             for delayed_func, args, kwargs in iterable
+     62         )
+---&gt; 63         return super().__call__(iterable_with_config)
+     64 
+     65 
+
+/usr/local/lib/python3.10/dist-packages/joblib/parallel.py in __call__(self, iterable)
+   1916             output = self._get_sequential_output(iterable)
+   1917             next(output)
+-&gt; 1918             return output if self.return_generator else list(output)
+   1919 
+   1920         # Let&#39;s create an ID that uniquely identifies the current call. If the
+
+/usr/local/lib/python3.10/dist-packages/joblib/parallel.py in _get_sequential_output(self, iterable)
+   1845                 self.n_dispatched_batches += 1
+   1846                 self.n_dispatched_tasks += 1
+-&gt; 1847                 res = func(*args, **kwargs)
+   1848                 self.n_completed_tasks += 1
+   1849                 self.print_progress()
+
+/usr/local/lib/python3.10/dist-packages/sklearn/utils/parallel.py in __call__(self, *args, **kwargs)
+    121             config = {}
+    122         with config_context(**config):
+--&gt; 123             return self.function(*args, **kwargs)
+
+/usr/local/lib/python3.10/dist-packages/sklearn/model_selection/_validation.py in _fit_and_score(estimator, X, y, scorer, train, test, verbose, parameters, fit_params, return_train_score, return_parameters, return_n_test_samples, return_times, return_estimator, split_progress, candidate_progress, error_score)
+    706 
+    707         fit_time = time.time() - start_time
+--&gt; 708         test_scores = _score(estimator, X_test, y_test, scorer, error_score)
+    709         score_time = time.time() - start_time - fit_time
+    710         if return_train_score:
+
+/usr/local/lib/python3.10/dist-packages/sklearn/model_selection/_validation.py in _score(estimator, X_test, y_test, scorer, error_score)
+    765             scores = scorer(estimator, X_test)
+    766         else:
+--&gt; 767             scores = scorer(estimator, X_test, y_test)
+    768     except Exception:
+    769         if isinstance(scorer, _MultimetricScorer):
+
+/usr/local/lib/python3.10/dist-packages/sklearn/metrics/_scorer.py in __call__(self, estimator, *args, **kwargs)
+    113             try:
+    114                 if isinstance(scorer, _BaseScorer):
+--&gt; 115                     score = scorer._score(cached_call, estimator, *args, **kwargs)
+    116                 else:
+    117                     score = scorer(estimator, *args, **kwargs)
+
+/usr/local/lib/python3.10/dist-packages/sklearn/metrics/_scorer.py in _score(self, method_caller, estimator, X, y_true, sample_weight)
+    274         &quot;&quot;&quot;
+    275 
+--&gt; 276         y_pred = method_caller(estimator, &quot;predict&quot;, X)
+    277         if sample_weight is not None:
+    278             return self._sign * self._score_func(
+
+/usr/local/lib/python3.10/dist-packages/sklearn/metrics/_scorer.py in _cached_call(cache, estimator, method, *args, **kwargs)
+     71     &quot;&quot;&quot;Call estimator with method and args and kwargs.&quot;&quot;&quot;
+     72     if cache is None:
+---&gt; 73         return getattr(estimator, method)(*args, **kwargs)
+     74 
+     75     try:
+
+/usr/local/lib/python3.10/dist-packages/sklearn/pipeline.py in predict(self, X, **predict_params)
+    478         Xt = X
+    479         for _, name, transform in self._iter(with_final=False):
+--&gt; 480             Xt = transform.transform(Xt)
+    481         return self.steps[-1][1].predict(Xt, **predict_params)
+    482 
+
+/usr/local/lib/python3.10/dist-packages/sklearn/utils/_set_output.py in wrapped(self, X, *args, **kwargs)
+    138     @wraps(f)
+    139     def wrapped(self, X, *args, **kwargs):
+--&gt; 140         data_to_wrap = f(self, X, *args, **kwargs)
+    141         if isinstance(data_to_wrap, tuple):
+    142             # only wrap the first output for cross decomposition
+
+/usr/local/lib/python3.10/dist-packages/sklearn/feature_extraction/_dict_vectorizer.py in transform(self, X)
+    370             Feature vectors; always 2-d.
+    371         &quot;&quot;&quot;
+--&gt; 372         return self._transform(X, fitting=False)
+    373 
+    374     def get_feature_names_out(self, input_features=None):
+
+/usr/local/lib/python3.10/dist-packages/sklearn/feature_extraction/_dict_vectorizer.py in _transform(self, X, fitting)
+    278             result_matrix.sort_indices()
+    279         else:
+--&gt; 280             result_matrix = result_matrix.toarray()
+    281 
+    282         if fitting:
+
+/usr/local/lib/python3.10/dist-packages/scipy/sparse/_compressed.py in toarray(self, order, out)
+   1048         if out is None and order is None:
+   1049             order = self._swap(&#39;cf&#39;)[0]
+-&gt; 1050         out = self._process_toarray_args(order, out)
+   1051         if not (out.flags.c_contiguous or out.flags.f_contiguous):
+   1052             raise ValueError(&#39;Output array must be C or F contiguous&#39;)
+
+/usr/local/lib/python3.10/dist-packages/scipy/sparse/_base.py in _process_toarray_args(self, order, out)
+   1265             return out
+   1266         else:
+-&gt; 1267             return np.zeros(self.shape, dtype=self.dtype, order=order)
+   1268 
+   1269     def _get_index_dtype(self, arrays=(), maxval=None, check_contents=False):
+
+KeyboardInterrupt: 
+</code></pre>
+</div>
+</div>
+<div class="cell markdown" id="w8dMNdD_q0d0">
+<p>Below, we plot a colormap of our first prediction model. As you can
+see, it is not very predictive, as we expected.</p>
+</div>
+<div class="cell code" data-execution_count="43"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:771}"
+id="nxzDPw_bqbmg" data-outputId="950899aa-da6c-4e36-c15d-40933ae545b9">
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>pipeline.fit(X_train_dict, y_train)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>predicted_values <span class="op">=</span> pipeline.predict(X_train_dict)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>top_cultures <span class="op">=</span> dfme[<span class="st">&#39;Culture&#39;</span>].value_counts().nlargest(<span class="dv">10</span>).index</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="op">=</span> dfme[(dfme[<span class="st">&#39;Culture&#39;</span>].isin(top_cultures)) <span class="op">&amp;</span> (dfme[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">&gt;</span> <span class="dv">0</span>)]</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>filtered_df.reset_index(drop<span class="op">=</span><span class="va">True</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>plt.scatter(filtered_df[<span class="st">&#39;Culture&#39;</span>], filtered_df[<span class="st">&#39;Object Begin Date&#39;</span>], c<span class="op">=</span>predicted_values[filtered_df.index], cmap<span class="op">=</span><span class="st">&#39;viridis&#39;</span>)</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>plt.colorbar(label<span class="op">=</span><span class="st">&#39;Predicted Object Begin Date&#39;</span>)</span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Culture&#39;</span>)</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Object Begin Date&#39;</span>)</span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Predicted Object Begin Date based on top 10 cultures&#39;</span>)</span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">&#39;right&#39;</span>)</span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="output display_data">
+<p><img
+src="vertopal_0122a43e514f4820a31fc9c26f6fe6c6/847016a1adc332a36b7aebea1497e8dee3ed056c.png" /></p>
+</div>
+</div>
+<div class="cell markdown" id="LSdaCZo_uekX">
+<p>Below we will do the same thing for a new era, using dataframe
+dfme1.</p>
+</div>
+<div class="cell code" data-execution_count="44" id="dFqClGfltfQG">
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co">#for dfme1, new era</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>features <span class="op">=</span> [<span class="st">&quot;Classification&quot;</span>, <span class="st">&quot;Culture&quot;</span> ]</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>pipeline1 <span class="op">=</span> Pipeline([(<span class="st">&quot;vectorizer&quot;</span>, vec), (<span class="st">&quot;scaler&quot;</span>, scaler), (<span class="st">&quot;fit&quot;</span>, model)])</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>X_train_dict1 <span class="op">=</span> dfme1[features].to_dict(orient<span class="op">=</span><span class="st">&quot;records&quot;</span>)</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>y_train1 <span class="op">=</span> dfme1[<span class="st">&quot;Object Begin Date&quot;</span>]</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>vec <span class="op">=</span> DictVectorizer(sparse<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>vec.fit(X_train_dict)</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>X_train1 <span class="op">=</span> vec.transform(X_train_dict1)</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler()</span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>scaler.fit(X_train1)</span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>X_train_sc1 <span class="op">=</span> scaler.transform(X_train1)</span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> KNeighborsRegressor(n_neighbors<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>model.fit(X_train_sc1, y_train1)</span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>y_train_pred1 <span class="op">=</span> model.predict(X_train_sc1)</span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>y_train_pred1</span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a>scores1 <span class="op">=</span> cross_val_score(pipeline1, X_train_dict1, y_train1,</span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a>                         cv<span class="op">=</span><span class="dv">17</span>, scoring<span class="op">=</span><span class="st">&quot;neg_mean_squared_error&quot;</span>)</span></code></pre></div>
+</div>
+<div class="cell markdown" id="I32lY3-JvT-6">
+<p>Again, we get the MSE for this prediction model to test the
+accuracy.</p>
+</div>
+<div class="cell code" id="yf9Xpoc9ti6_">
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">#dfme1</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_cv_error1(k):</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> KNeighborsRegressor(n_neighbors<span class="op">=</span>k)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>    pipeline <span class="op">=</span> Pipeline([(<span class="st">&quot;vectorizer&quot;</span>, vec), (<span class="st">&quot;scaler&quot;</span>, scaler), (<span class="st">&quot;fit&quot;</span>, model)])</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>    mse <span class="op">=</span> np.mean(<span class="op">-</span>cross_val_score(</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>        pipeline, X_train_dict, y_train,</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>        cv<span class="op">=</span><span class="dv">10</span>, scoring<span class="op">=</span><span class="st">&quot;neg_mean_squared_error&quot;</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mse</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>ks <span class="op">=</span> pd.Series(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">51</span>))</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>ks.index <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">51</span>)</span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>test_errs <span class="op">=</span> ks.<span class="bu">apply</span>(get_cv_error1)</span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>test_errs.plot.line()</span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>test_errs.sort_values()</span></code></pre></div>
+</div>
+<div class="cell code" id="DYQkncuLtppL">
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">#dfme1</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>pipeline1.fit(X_train_dict1, y_train1)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>predicted_values1 <span class="op">=</span> pipeline1.predict(X_train_dict1)</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>top_cultures1 <span class="op">=</span> dfme1[<span class="st">&#39;Culture&#39;</span>].value_counts().nlargest(<span class="dv">10</span>).index</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>filtered_df1 <span class="op">=</span> dfme1[(dfme1[<span class="st">&#39;Culture&#39;</span>].isin(top_cultures1)) <span class="op">&amp;</span> (dfme1[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">&gt;</span> <span class="dv">0</span>)]</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>filtered_df1.reset_index(drop<span class="op">=</span><span class="va">True</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>plt.scatter(filtered_df1[<span class="st">&#39;Culture&#39;</span>], filtered_df1[<span class="st">&#39;Object Begin Date&#39;</span>], c<span class="op">=</span>predicted_values1[filtered_df1.index], cmap<span class="op">=</span><span class="st">&#39;viridis&#39;</span>)</span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>plt.colorbar(label<span class="op">=</span><span class="st">&#39;Predicted Object Begin Date&#39;</span>)</span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Culture&#39;</span>)</span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Object Begin Date&#39;</span>)</span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Predicted Object Begin Date based on top 10 cultures&#39;</span>)</span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">&#39;right&#39;</span>)</span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+</div>
+<div class="cell markdown" id="iftZbxZ0xiGi">
+<p>And again for the third era.</p>
+</div>
+<div class="cell code" id="dc_DQtBEv_uz">
+<div class="sourceCode" id="cb45"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">#for dfme2, new era</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>features <span class="op">=</span> [<span class="st">&quot;Classification&quot;</span>, <span class="st">&quot;Culture&quot;</span> ]</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>pipeline2 <span class="op">=</span> Pipeline([(<span class="st">&quot;vectorizer&quot;</span>, vec), (<span class="st">&quot;scaler&quot;</span>, scaler), (<span class="st">&quot;fit&quot;</span>, model)])</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>X_train_dict2 <span class="op">=</span> dfme2[features].to_dict(orient<span class="op">=</span><span class="st">&quot;records&quot;</span>)</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>y_train2 <span class="op">=</span> dfme2[<span class="st">&quot;Object Begin Date&quot;</span>]</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>vec <span class="op">=</span> DictVectorizer(sparse<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>vec.fit(X_train_dict)</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>X_train2 <span class="op">=</span> vec.transform(X_train_dict2)</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler()</span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>scaler.fit(X_train2)</span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>X_train_sc2 <span class="op">=</span> scaler.transform(X_train2)</span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> KNeighborsRegressor(n_neighbors<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>model.fit(X_train_sc2, y_train2)</span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a>y_train_pred2 <span class="op">=</span> model.predict(X_train_sc2)</span>
+<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a>y_train_pred2</span>
+<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a>scores2 <span class="op">=</span> cross_val_score(pipeline2, X_train_dict2, y_train2,</span>
+<span id="cb45-23"><a href="#cb45-23" aria-hidden="true" tabindex="-1"></a>                         cv<span class="op">=</span><span class="dv">17</span>, scoring<span class="op">=</span><span class="st">&quot;neg_mean_squared_error&quot;</span>)</span></code></pre></div>
+</div>
+<div class="cell code" id="tE-ER66OwCms">
+<div class="sourceCode" id="cb46"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">#dfme2</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_cv_error2(k):</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> KNeighborsRegressor(n_neighbors<span class="op">=</span>k)</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    pipeline <span class="op">=</span> Pipeline([(<span class="st">&quot;vectorizer&quot;</span>, vec), (<span class="st">&quot;scaler&quot;</span>, scaler), (<span class="st">&quot;fit&quot;</span>, model)])</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    mse <span class="op">=</span> np.mean(<span class="op">-</span>cross_val_score(</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>        pipeline, X_train_dict2, y_train2,</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>        cv<span class="op">=</span><span class="dv">10</span>, scoring<span class="op">=</span><span class="st">&quot;neg_mean_squared_error&quot;</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mse</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>ks <span class="op">=</span> pd.Series(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">51</span>))</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>ks.index <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">51</span>)</span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>test_errs <span class="op">=</span> ks.<span class="bu">apply</span>(get_cv_error2)</span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>test_errs.plot.line()</span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>test_errs.sort_values()</span></code></pre></div>
+</div>
+<div class="cell code" id="Ot6Yr-2wwFZ0">
+<div class="sourceCode" id="cb47"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">#dfme2</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>pipeline.fit(X_train_dict2, y_train2)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>predicted_values2 <span class="op">=</span> pipeline2.predict(X_train_dict2)</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>top_cultures2 <span class="op">=</span> dfme2[<span class="st">&#39;Culture&#39;</span>].value_counts().nlargest(<span class="dv">10</span>).index</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>filtered_df2 <span class="op">=</span> dfme2[(dfme2[<span class="st">&#39;Culture&#39;</span>].isin(top_cultures2)) <span class="op">&amp;</span> (dfme2[<span class="st">&#39;Object Begin Date&#39;</span>] <span class="op">&gt;</span> <span class="dv">0</span>)]</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>filtered_df2.reset_index(drop<span class="op">=</span><span class="va">True</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>plt.scatter(filtered_df2[<span class="st">&#39;Culture&#39;</span>], filtered_df2[<span class="st">&#39;Object Begin Date&#39;</span>], c<span class="op">=</span>predicted_values2[filtered_df2.index], cmap<span class="op">=</span><span class="st">&#39;viridis&#39;</span>)</span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>plt.colorbar(label<span class="op">=</span><span class="st">&#39;Predicted Object Begin Date&#39;</span>)</span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Culture&#39;</span>)</span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Object Begin Date&#39;</span>)</span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Predicted Object Begin Date based on top 10 cultures&#39;</span>)</span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">&#39;right&#39;</span>)</span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+</div>
+<div class="cell markdown" id="fLVLHi5g5hQU">
+<p>Below, we will test the accuracy of a model with three criteria
+(Classification, Culture, and Medium) versus a model with the same
+criteria plus Artist Display Name. As we discussed above, we will look
+at these two models in comparison because many objects do not have an
+Artist Display Name, or any information about the artist at all.</p>
+</div>
+<div class="cell code" id="7KhytwBk5e1e">
+<div class="sourceCode" id="cb48"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>features <span class="op">=</span> [<span class="st">&quot;Classification&quot;</span>, <span class="st">&quot;Culture&quot;</span>, <span class="st">&quot;Medium&quot;</span>]</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>X_dict <span class="op">=</span> df2[features].to_dict(orient<span class="op">=</span><span class="st">&quot;records&quot;</span>)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>np.mean(</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span>cross_val_score(pipeline, X_dict, y, cv<span class="op">=</span><span class="dv">10</span>, scoring<span class="op">=</span><span class="st">&quot;neg_mean_squared_error&quot;</span>)</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div class="cell code" id="_WPfGAa_5fZW">
+<div class="sourceCode" id="cb49"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>features <span class="op">=</span> [<span class="st">&quot;Classification&quot;</span>, <span class="st">&quot;Culture&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;Artist Display Name&quot;</span>]</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>X_dict <span class="op">=</span> df2[features].to_dict(orient<span class="op">=</span><span class="st">&quot;records&quot;</span>)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>np.mean(</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span>cross_val_score(pipeline, X_dict, y, cv<span class="op">=</span><span class="dv">10</span>, scoring<span class="op">=</span><span class="st">&quot;neg_mean_squared_error&quot;</span>)</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div class="cell markdown" id="DJKdOuxx5yNm">
+<p>As you can see, a prediction with the Artist Name included had the
+MSE that was lower, meaning this is a more accurate prediction. This is
+to be expected, as more information about the object can make a more
+accurate prediction.</p>
+<p>While this is helpful data point, for our project we think that both
+Models still have potential use cases. Found objects that are being
+identified may not have a specific artist, and neither do many of the
+older objects in the collection.</p>
+</div>
+<div class="cell markdown" id="czB0kE8kxll9">
+<p>As part of our testing process, we chose an actual object that we
+already know information for. We found this object from this website: <a
+href="https://www.metmuseum.org/art/collection/search/16885"
+class="uri">https://www.metmuseum.org/art/collection/search/16885</a></p>
+<p>We will use the model to predict the Object Begin Date for this
+object and see how accurate the prediction is.</p>
+</div>
+<div class="cell code" id="IDiLIh-d2ngj">
+<div class="sourceCode" id="cb50"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>features <span class="op">=</span> [<span class="st">&quot;Classification&quot;</span>, <span class="st">&quot;Culture&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;Artist Display Name&quot;</span>, <span class="st">&quot;Region&quot;</span>]</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>X_train <span class="op">=</span> pd.get_dummies(dfme[features])</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>y_train <span class="op">=</span> dfme[<span class="st">&quot;Object Begin Date&quot;</span>]</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>X_train.columns</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>x_new <span class="op">=</span> pd.Series(index<span class="op">=</span>X_train.columns, dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>x_new[<span class="st">&quot;Classification_Drawings&quot;</span>] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>x_new[<span class="st">&quot;Culture_American&quot;</span>] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>x_new[<span class="st">&quot;Medium_Graphite&quot;</span>] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>x_new[<span class="st">&quot;Region_American&quot;</span>] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>x_new.fillna(<span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>x_new</span>
+<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a>X_train_mean <span class="op">=</span> X_train.mean()</span>
+<span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a>X_train_std <span class="op">=</span> X_train.std()</span>
+<span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-22"><a href="#cb50-22" aria-hidden="true" tabindex="-1"></a>X_train_sc <span class="op">=</span> (X_train <span class="op">-</span> X_train_mean) <span class="op">/</span> X_train_std</span>
+<span id="cb50-23"><a href="#cb50-23" aria-hidden="true" tabindex="-1"></a>x_new_sc <span class="op">=</span> (x_new <span class="op">-</span> X_train_mean) <span class="op">/</span> X_train_std</span>
+<span id="cb50-24"><a href="#cb50-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-25"><a href="#cb50-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Find index of 30 nearest neighbors.</span></span>
+<span id="cb50-26"><a href="#cb50-26" aria-hidden="true" tabindex="-1"></a>dists <span class="op">=</span> np.sqrt(((X_train_sc <span class="op">-</span> x_new_sc) <span class="op">**</span> <span class="dv">2</span>).<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>))</span>
+<span id="cb50-27"><a href="#cb50-27" aria-hidden="true" tabindex="-1"></a>i_nearest <span class="op">=</span> dists.sort_values()[:<span class="dv">30</span>].index</span>
+<span id="cb50-28"><a href="#cb50-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-29"><a href="#cb50-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Average the labels of these 30 nearest neighbors</span></span>
+<span id="cb50-30"><a href="#cb50-30" aria-hidden="true" tabindex="-1"></a>y_train.loc[i_nearest].mean()</span></code></pre></div>
+</div>
+<div class="cell markdown" id="G0CW8sjjy7-t">
+<p>This model is therefore pretty accurate for this drawing. The museum
+website does not have a creation date for this object, but rather a date
+when it was gifted to the museum which was 1925. Therefore, the
+prediction is quite accurate to the data that we do have for this
+particular object.</p>
+</div>
+<div class="cell markdown" id="NYPEjovJ2PG1">
+<p>Conclusions: Because our data is inundated with objects dated very
+recently, we had to create a predictive model that truly and accurately
+predicts dates without being skewed to more recent years. So, instead of
+imputing missing values to train our model, we dropped all NaN's in
+order to do this. We then used k-fold cross validation to test our
+model’s accuracy. We found that models that used more criteria (as in,
+models that predicted based on Culture, Classification, Artist Display
+Name, Region, and Medium rather than just Culture and Classification)
+were more accurate. This makes sense for two reasons: one being that
+there is more data to train on, and also that some of these categories
+are very broad. One object classified as “American” might be vastly
+different from another American object. So, we know now that the more
+criteria we have, the more accurately the model will predict the Object
+Begin Date. We were also selective about which criteria to use to train
+the model. For instance, we compared predictions with and without Artist
+Display Name because many objects have no information about the
+artist.</p>
+<p>In conclusion, it is possible to predict the Object Begin Date of an
+object from the MET Museum using other criteria. However, you must be
+selective about which criteria you use. You must also be cautious about
+missing values so as not to skew the predictive data.</p>
 </div>
 </body>
 </html>
